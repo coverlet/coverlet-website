@@ -18,7 +18,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
             
       - name: Install dependencies
         run: npm i
@@ -44,13 +44,13 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
 
-      # - name: Restart PM2 server
-      #   uses: garygrossgarten/github-action-ssh@release
-      #   with:
-      #     command: pm2 restart 0  --update-env   
-      #     host: ${{ secrets.REMOTE_HOST }}
-      #     username: ${{ secrets.REMOTE_USER }}
-      #     privateKey: ${{ secrets.SERVER_SSH_KEY }} 
+      - name: Restart PM2 server
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: pm2 restart coverlet  --update-env   
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          privateKey: ${{ secrets.SERVER_SSH_KEY }} 
 
       # - name: Upload coverage to codecov
       #   run: bash <(curl -s https://codecov.io/bash)

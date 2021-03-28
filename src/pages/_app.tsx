@@ -15,7 +15,17 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
 
   return (
     <Provider store={store}>
-      <SmoothScrollProvider options={{ smooth: true }}>
+      <SmoothScrollProvider
+        options={{
+          smooth: true,
+          smartphone: {
+            smooth: true,
+          },
+          tablet: {
+            smooth: true,
+          },
+        }}
+      >
         <Layout>
           <Component {...pageProps} />
         </Layout>
