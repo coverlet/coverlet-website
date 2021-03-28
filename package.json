@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
-    "@zeit/next-less": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "canvasjs": "^1.8.3",
     "gsap": "^3.6.1",
     "locomotive-scroll": "^4.1.1",
@@ -27,8 +25,7 @@
     "react-spring": "^8.0.27",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "rsuite": "^4.8.6",
-    "sass": "^1.28.0"
+    "rsuite": "^4.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -39,6 +36,8 @@
     "@types/react-redux": "^7.1.14",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -48,7 +47,9 @@
     "husky": "^4.3.6",
     "less": "^3.13.1",
     "lint-staged": "^10.5.3",
+    "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "sass": "^1.32.8"
   }
 }
