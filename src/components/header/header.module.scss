@@ -1,0 +1,25 @@
+.coverlet-header {
+  z-index: 99;
+  height: 264px;
+  background: linear-gradient(60deg, #0467c4, #003885);
+  color: white;
+
+  .container {
+    align-items: center;
+    display: flex;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .nav {
+    flex-grow: 1;
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .right-panel {
+    padding-left: 24px;
+  }
+}

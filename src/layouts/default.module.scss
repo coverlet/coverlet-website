@@ -1,0 +1,30 @@
+// TODO define breakpoint variables in separate files
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 1216px) {
+      width: 1012px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: auto;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  .full-container {
+    width: 100%;
+  }
+}
