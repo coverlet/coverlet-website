@@ -1,7 +1,8 @@
 .coverlet-header {
   z-index: 99;
-  height: 264px;
-  background: linear-gradient(60deg, #0467c4, #003885);
+  // height: 264px;
+  // background: linear-gradient(60deg, #0467c4, #003885);
+  position: absolute;
   color: white;
 
   .container {

@@ -2,16 +2,17 @@ import React, { ReactElement, useContext, useEffect, useRef, useState } from 're
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCount, setCount } from '../redux/app';
 import { Button } from 'rsuite';
-import { Carousel } from 'react-responsive-carousel';
 import { Slide } from '../components/slide/slide';
 import { SmoothScrollContext } from '../utils/scroll-context';
 import { Services } from '../components/services/services';
+import { Carousel } from '../components/carousel/carousel';
 
 import './index.module.scss';
 
 const HomePage = () => {
   return (
     <div>
+      <Carousel />
       <div className="container ">
         Lorem Ipsum is simply dummy text of the printing and
         <br />

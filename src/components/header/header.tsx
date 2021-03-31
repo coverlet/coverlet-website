@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Nav, Dropdown } from 'rsuite';
 
-import './header.module.scss';
+import './header.scss';
 
 export const Header = (): ReactElement => {
   return (
