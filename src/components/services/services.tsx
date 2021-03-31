@@ -61,7 +61,6 @@ export const Services = (): ReactElement => {
         start: 'top 50%',
         scrub: true,
         onEnter: () => {
-          console.log(`enter ${i}`);
           setText(cardData[i].text);
           gsap.to('.services', {
             backgroundImage: cardData[i].background,
@@ -69,7 +68,6 @@ export const Services = (): ReactElement => {
           });
         },
         onLeaveBack: () => {
-          console.log(`leave back ${i}`);
           setText(i > 0 ? cardData[i - 1].text : cardData[0].text);
           gsap.to('.services', {
             backgroundImage: i > 0 ? cardData[i - 1].background : cardData[0].background,
@@ -86,13 +84,17 @@ export const Services = (): ReactElement => {
 
   return (
     <>
-      <div className="first-card">
-        <div className="title">What we offer</div>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been the industrys standard dummy text ever since the 1500s,
+      <div className="first-card full-container" id="scroll-offer">
+        <div className="fc1">sxxxxx</div>
+        <div className="fc2">wwwwww</div>
+        <div className="fc0">
+          <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
+            What we offer
+          </div>
+        </div>
       </div>
       <div className="services" id="scroll-services">
-        <div className="card full">
+        <div className="card full container">
           <div
             data-scroll
             data-scroll-sticky
@@ -109,7 +111,7 @@ export const Services = (): ReactElement => {
             </div>
           </div>
         </div>
-        <div className="card full">
+        <div className="card full container">
           <div className="content">
             <div className="title">Realibility</div>
             <div>
@@ -119,7 +121,7 @@ export const Services = (): ReactElement => {
           </div>
         </div>
 
-        <div className="card full">
+        <div className="card full container">
           <div className="content">
             <div className="title">Security</div>
             <div>

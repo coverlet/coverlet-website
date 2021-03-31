@@ -1,6 +1,10 @@
 import React, { ReactElement } from 'react';
-import styles from './footer.module.scss';
+import './footer.scss';
 
 export const Footer = (): ReactElement => {
-  return <div className={styles['footer']}>&copy; 2021</div>;
+  return (
+    <div className="footer">
+      <div className="container">&copy; 2021</div>
+    </div>
+  );
 };
