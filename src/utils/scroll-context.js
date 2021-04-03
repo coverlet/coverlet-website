@@ -1,4 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { gsap, Bounce } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 
 export const SmoothScrollContext = createContext({
   scroll: null,
@@ -9,6 +12,9 @@ export const SmoothScrollProvider = ({ children, options }) => {
 
   useEffect(() => {
     if (!scroll) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(MorphSVGPlugin);
+
       (async () => {
         try {
           const LocomotiveScroll = (await import('locomotive-scroll')).default;
@@ -17,7 +23,25 @@ export const SmoothScrollProvider = ({ children, options }) => {
             el: el ?? undefined,
             ...options,
           });
-          scroll.update();
+
+          scroll.on('scroll', ScrollTrigger.update);
+          const pageContainer = document.querySelector('[data-scroll-container]');
+          ScrollTrigger.scrollerProxy(pageContainer, {
+            scrollTop(value) {
+              return arguments.length
+                ? scroll.scrollTo(value, 0, 0)
+                : scroll.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+              return {
+                left: 0,
+                top: 0,
+                width: window.innerWidth,
+                height: window.innerHeight,
+              };
+            },
+          });
+
           setScroll(scroll);
         } catch (error) {
           throw Error(`[SmoothScrollProvider]: ${error}`);

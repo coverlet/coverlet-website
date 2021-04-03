@@ -1,0 +1,42 @@
+.services-hero {
+  #img_availability {
+    position: absolute;
+    top: 205px;
+    left: 116px;
+    width: 400px;
+    opacity: 0;
+    transition: all 0.4s ease 0.4s;
+
+    &.visible {
+      transform: translateY(-100px);
+      opacity: 1;
+    }
+  }
+
+  #img_security {
+    position: absolute;
+    width: 400px;
+    top: -114px;
+    left: -40px;
+    opacity: 0;
+    transition: all 0.4s ease 0.4s;
+
+    &.visible {
+      transform: translateX(100px);
+      opacity: 1;
+    }
+  }
+
+  #img_reliability {
+    position: absolute;
+    width: 400px;
+    top: 111px;
+    left: 15px;
+    opacity: 0;
+    transition: all 0.4s ease 0.4s;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+}

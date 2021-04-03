@@ -1,31 +1,55 @@
 import { ReactElement, useContext, useEffect, useState } from 'react';
 import { SmoothScrollContext } from '../../utils/scroll-context';
-import { gsap, Bounce } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
+import { gsap, Bounce, Expo } from 'gsap';
+import { ServicesHero } from './components/services-hero/services-hero';
 
 import './services.scss';
 
 const cardData = [
   {
     background: 'linear-gradient(110deg, #f269f6, #af7dfb)',
-    text: 'Coverlet',
-    svg: '#p1',
-    svgBg: '#ce4fdc',
+    svgBgSelector: '#bgpath1',
+    svgShapeSelector: '#shape1',
+    svgExtraSelector: '#extra1',
+    svgBgColor: '#ce4fdc',
+    svgShapeColor: '#D96AE5',
+    img: 'img_availability',
   },
   {
     background: 'linear-gradient(110deg, #f76bb0, #fbdf6a)',
-    text: 'is',
-    svg: '#p2',
-    svgBg: '#fc584d',
+    svgBgSelector: '#bgpath2',
+    svgShapeSelector: '#shape2',
+    svgExtraSelector: '#extra2',
+    svgBgColor: '#fc584d',
+    svgShapeColor: '#FBAC3B',
+    img: 'img_security',
   },
   {
     background: 'linear-gradient(110deg, #61c8f6, #6cf6b3)',
-    text: 'the best',
-    svg: '#p3',
-    svgBg: '#108ac4',
+    svgBgSelector: '#bgpath3',
+    svgShapeSelector: '#shape3',
+    svgExtraSelector: '#extra3',
+    svgBgColor: '#108ac4',
+    svgShapeColor: '#F4F4F4',
+    img: 'img_reliability',
   },
 ];
+
+const setBgFixed = (divs, fixed) => {
+  for (const e of divs) {
+    if (fixed) {
+      e.setAttribute('data-scroll', 'true');
+      e.setAttribute('data-scroll-sticky', 'true');
+      e.setAttribute('data-scroll-target', '.main-container');
+      e.classList.add('fixed');
+    } else {
+      e.removeAttribute('data-scroll');
+      e.removeAttribute('data-scroll-sticky');
+      e.removeAttribute('data-scroll-target');
+    }
+  }
+};
 
 export const Services = (): ReactElement => {
   const scrollElem = useContext(SmoothScrollContext);
@@ -35,31 +59,14 @@ export const Services = (): ReactElement => {
       return;
     }
     const scroller = scrollElem.scroll;
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(MorphSVGPlugin);
 
-    scroller.on('scroll', ScrollTrigger.update);
-
-    const pageContainer = document.querySelector('[data-scroll-container]');
-
-    ScrollTrigger.scrollerProxy(pageContainer, {
-      scrollTop(value) {
-        return arguments.length
-          ? scroller.scrollTo(value, 0, 0)
-          : scroller.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          left: 0,
-          top: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      //pinType: pageContainer.style.transform ? 'transform' : 'fixed',
+    // fetch all required html elements
+    const cards = document.querySelectorAll('.card');
+    const images = [];
+    cardData.forEach((card, i) => {
+      images[i] = document.getElementById(card.img);
     });
 
-    const cards = document.querySelectorAll('.card');
     cards.forEach((card, i) => {
       ScrollTrigger.create({
         trigger: card,
@@ -71,28 +78,96 @@ export const Services = (): ReactElement => {
             backgroundImage: cardData[i].background,
             overwrite: 'auto',
           });
-          gsap.to('#p1', {
-            morphSVG: cardData[i].svg,
+          gsap.to('#bgpath1', {
+            morphSVG: cardData[i].svgBgSelector,
             duration: 0.5,
             ease: Bounce.easeOut,
-            fill: cardData[i].svgBg,
+            fill: cardData[i].svgBgColor,
           });
+          gsap.to('#shape1', {
+            morphSVG: cardData[i].svgShapeSelector,
+            duration: 0.5,
+            ease: Expo.easeOut,
+            fill: cardData[i].svgShapeColor,
+            delay: 0.3,
+          });
+          gsap.to(cardData[i].svgExtraSelector, {
+            duration: 0.5,
+            ease: Expo.easeOut,
+            opacity: 1,
+            delay: 0.5,
+          });
+          if (cardData[i - 1]) {
+            gsap.to(cardData[i - 1].svgExtraSelector, {
+              duration: 0.5,
+              ease: Expo.easeOut,
+              opacity: 0,
+            });
+          }
+
+          if (images[i - 1]) {
+            images[i - 1].style.transitionDelay = '0s';
+            images[i - 1].style.transitionDuration = '0.1s';
+            images[i - 1].classList.remove('visible');
+          }
+
+          if (images[i]) {
+            images[i].style.transitionDelay = '0.6s';
+            images[i].style.transitionDuration = '0.4s';
+            images[i].classList.add('visible');
+          }
         },
+
         onLeaveBack: () => {
           gsap.to('.bg-overlay', {
             backgroundImage: i > 0 ? cardData[i - 1].background : cardData[0].background,
             overwrite: 'auto',
           });
 
-          gsap.to('#p1', {
-            morphSVG: i > 0 ? cardData[i - 1].svg : cardData[0].svg,
+          gsap.to('#bgpath1', {
+            morphSVG: i > 0 ? cardData[i - 1].svgBgSelector : cardData[0].svgBgSelector,
             duration: 0.5,
             ease: Bounce.easeOut,
-            fill: i > 0 ? cardData[i - 1].svgBg : cardData[0].svgBg,
+            fill: i > 0 ? cardData[i - 1].svgBgColor : cardData[0].svgBgColor,
           });
+          gsap.to('#shape1', {
+            morphSVG: i > 0 ? cardData[i - 1].svgShapeSelector : cardData[0].svgShapeSelector,
+            duration: 0.5,
+            ease: Expo.easeOut,
+            fill: i > 0 ? cardData[i - 1].svgShapeColor : cardData[0].svgShapeColor,
+            delay: 0.3,
+          });
+
+          gsap.to(cardData[i].svgExtraSelector, {
+            duration: 0.5,
+            ease: Expo.easeOut,
+            opacity: 0,
+          });
+          if (cardData[i - 1]) {
+            gsap.to(cardData[i - 1].svgExtraSelector, {
+              duration: 0.5,
+              ease: Expo.easeOut,
+              opacity: 1,
+              delay: 0.5,
+            });
+          }
+
+          if (images[i]) {
+            images[i].style.transitionDelay = '0s';
+            images[i].style.transitionDuration = '0.1s';
+            images[i].classList.remove('visible');
+          }
+
+          if (images[i - 1]) {
+            images[i - 1].style.transitionDelay = '0.6s';
+            images[i - 1].style.transitionDuration = '0.4s';
+            images[i - 1].classList.add('visible');
+          }
         },
       });
     });
+
+    const bgDivs = document.getElementsByClassName('services-bg') as any;
 
     ScrollTrigger.create({
       trigger: '.services-parent',
@@ -101,45 +176,19 @@ export const Services = (): ReactElement => {
       end: 'bottom 100%',
       scrub: true,
       onEnter: () => {
-        const e = document.getElementsByClassName('xxx') as any;
-        for (const i of e) {
-          i.setAttribute('data-scroll', 'true');
-          i.setAttribute('data-scroll-sticky', 'true');
-          i.setAttribute('data-scroll-target', '.main-container');
-          i.classList.add('fixed');
-        }
+        setBgFixed(bgDivs, true);
         scroller.update();
       },
       onEnterBack: () => {
-        const e = document.getElementsByClassName('xxx') as any;
-        for (const i of e) {
-          i.setAttribute('data-scroll', 'true');
-          i.setAttribute('data-scroll-sticky', 'true');
-          i.setAttribute('data-scroll-target', '.main-container');
-          i.classList.add('fixed');
-        }
+        setBgFixed(bgDivs, true);
         scroller.update();
       },
       onLeaveBack: () => {
-        const e = document.getElementsByClassName('xxx') as any;
-        for (const i of e) {
-          i.removeAttribute('data-scroll');
-          i.removeAttribute('data-scroll-sticky');
-          i.removeAttribute('data-scroll-target');
-          // i.classList.remove('fixed');
-          // i.style.transform = 'none';
-        }
+        setBgFixed(bgDivs, false);
         scroller.update();
       },
       onLeave: () => {
-        const e = document.getElementsByClassName('xxx') as any;
-        for (const i of e) {
-          i.removeAttribute('data-scroll');
-          i.removeAttribute('data-scroll-sticky');
-          i.removeAttribute('data-scroll-target');
-          // i.classList.remove('fixed');
-          // i.style.transform = 'none';
-        }
+        setBgFixed(bgDivs, false);
         scroller.update();
       },
     });
@@ -152,11 +201,11 @@ export const Services = (): ReactElement => {
   return (
     <>
       <div className="egde-card first full-container" id="scroll-offer">
-        <div className="xxx bg-contrast is-inview"></div>
-        <div className="xxx bg-overlay is-inview"></div>
-        <div className="wwo">
+        <div className="services-bg bg-contrast "></div>
+        <div className="services-bg bg-overlay "></div>
+        <div className="edge-text">
           <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
-            <div className="text">What we offer</div>
+            What we offer
           </div>
         </div>
       </div>
@@ -169,12 +218,7 @@ export const Services = (): ReactElement => {
               data-scroll-target="#scroll-services"
               className="serv-hero"
             >
-              <svg height="600" width="400" viewBox="0 0 14 11">
-                <path id="p1" className="c1" d="M 5 1 L 12 2 L 11 9 L 5 9 L 5 1 Z" />
-                <path id="p2" className="c2" d="M 4 2 L 10 1 L 12 10 L 3 11 L 4 2 Z" />
-                <path id="p3" className="c3" d="M 5 0 L 11 1 L 10 10 L 3 9 L 5 0 Z" />
-                Sorry, your browser does not support inline SVG.
-              </svg>
+              <ServicesHero />
             </div>
             <div className="content">
               <div className="title">Availability</div>
@@ -204,17 +248,17 @@ export const Services = (): ReactElement => {
             </div>
           </div>
         </div>
-        <div style={{ height: '100vh' }}>aaaaa sssss wwwwwww</div>
+        <div style={{ height: '100vh' }}></div>
       </div>
       <div className="egde-card last full-container" id="scroll-offer-end">
-        <div className="wwo">
+        <div className="edge-text">
           <div
             className="title"
             data-scroll
             data-scroll-sticky
             data-scroll-target="#scroll-offer-end"
           >
-            What we offer
+            Thats all floks!
           </div>
         </div>
       </div>
