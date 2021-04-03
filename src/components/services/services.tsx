@@ -73,7 +73,7 @@ export const Services = (): ReactElement => {
           });
           gsap.to('#p1', {
             morphSVG: cardData[i].svg,
-            duration: 1,
+            duration: 0.5,
             ease: Bounce.easeOut,
             fill: cardData[i].svgBg,
           });
@@ -86,7 +86,7 @@ export const Services = (): ReactElement => {
 
           gsap.to('#p1', {
             morphSVG: i > 0 ? cardData[i - 1].svg : cardData[0].svg,
-            duration: 1,
+            duration: 0.5,
             ease: Bounce.easeOut,
             fill: i > 0 ? cardData[i - 1].svgBg : cardData[0].svgBg,
           });
@@ -156,7 +156,7 @@ export const Services = (): ReactElement => {
         <div className="xxx bg-overlay is-inview"></div>
         <div className="wwo">
           <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
-            What we offer
+            <div className="text">What we offer</div>
           </div>
         </div>
       </div>

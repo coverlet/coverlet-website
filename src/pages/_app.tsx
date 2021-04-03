@@ -17,11 +17,14 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
     <Provider store={store}>
       <SmoothScrollProvider
         options={{
+          lerp: 0.12,
           smooth: true,
           smartphone: {
+            lerp: 0.12,
             smooth: true,
           },
           tablet: {
+            lerp: 0.4,
             smooth: true,
           },
         }}
