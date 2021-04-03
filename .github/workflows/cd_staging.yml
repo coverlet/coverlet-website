@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
+
+      - name: Create .npmrc file
+        run: |
+          touch .npmrc
+          echo //npm.greensock.com/:_authToken=${{ secrets.GSAP_TOKEN }} >> .npmrc
+          echo @gsap:registry=https://npm.greensock.com >> .npmrc
             
       - name: Install dependencies
         run: npm i

@@ -13,12 +13,12 @@ export const SmoothScrollProvider = ({ children, options }) => {
         try {
           const LocomotiveScroll = (await import('locomotive-scroll')).default;
           const el = document.querySelector('[data-scroll-container]');
-          setScroll(
-            new LocomotiveScroll({
-              el: el ?? undefined,
-              ...options,
-            })
-          );
+          const scroll = new LocomotiveScroll({
+            el: el ?? undefined,
+            ...options,
+          });
+          scroll.update();
+          setScroll(scroll);
         } catch (error) {
           throw Error(`[SmoothScrollProvider]: ${error}`);
         }
