@@ -67,6 +67,8 @@ export const Services = (): ReactElement => {
       images[i] = document.getElementById(card.img);
     });
 
+    const extraAnimations = [];
+
     cards.forEach((card, i) => {
       ScrollTrigger.create({
         trigger: card,
@@ -91,17 +93,25 @@ export const Services = (): ReactElement => {
             fill: cardData[i].svgShapeColor,
             delay: 0.3,
           });
-          gsap.to(cardData[i].svgExtraSelector, {
+
+          if (extraAnimations[i]) {
+            extraAnimations[i].kill();
+          }
+          extraAnimations[i] = gsap.to(cardData[i].svgExtraSelector, {
             duration: 0.5,
             ease: Expo.easeOut,
             opacity: 1,
             delay: 0.5,
           });
           if (cardData[i - 1]) {
-            gsap.to(cardData[i - 1].svgExtraSelector, {
+            if (extraAnimations[i - 1]) {
+              extraAnimations[i - 1].kill();
+            }
+            extraAnimations[i - 1] = gsap.to(cardData[i - 1].svgExtraSelector, {
               duration: 0.5,
               ease: Expo.easeOut,
               opacity: 0,
+              delay: 0.2,
             });
           }
 
@@ -138,13 +148,22 @@ export const Services = (): ReactElement => {
             delay: 0.3,
           });
 
-          gsap.to(cardData[i].svgExtraSelector, {
-            duration: 0.5,
-            ease: Expo.easeOut,
-            opacity: 0,
-          });
+          if (extraAnimations[i]) {
+            extraAnimations[i].kill();
+          }
+          if (i > 0) {
+            extraAnimations[i] = gsap.to(cardData[i].svgExtraSelector, {
+              duration: 0.5,
+              ease: Expo.easeOut,
+              opacity: 0,
+              delay: 0.2,
+            });
+          }
           if (cardData[i - 1]) {
-            gsap.to(cardData[i - 1].svgExtraSelector, {
+            if (extraAnimations[i - 1]) {
+              extraAnimations[i - 1].kill();
+            }
+            extraAnimations[i - 1] = gsap.to(cardData[i - 1].svgExtraSelector, {
               duration: 0.5,
               ease: Expo.easeOut,
               opacity: 1,

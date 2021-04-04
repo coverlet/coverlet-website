@@ -1,14 +1,14 @@
 .services-hero {
   #img_availability {
     position: absolute;
-    top: 205px;
+    top: 155px;
     left: 116px;
     width: 400px;
     opacity: 0;
     transition: all 0.4s ease 0.4s;
 
     &.visible {
-      transform: translateY(-100px);
+      transform: translateY(-50px);
       opacity: 1;
     }
   }
@@ -17,12 +17,12 @@
     position: absolute;
     width: 400px;
     top: -114px;
-    left: -40px;
+    left: 0px;
     opacity: 0;
     transition: all 0.4s ease 0.4s;
 
     &.visible {
-      transform: translateX(100px);
+      transform: translateX(60px);
       opacity: 1;
     }
   }
