@@ -5,3 +5,10 @@ export interface IRedux {
 export interface IApp {
   count: number;
 }
+
+export interface INetwork {
+  name: string;
+  icon: string;
+  mainnet: boolean;
+  live: boolean;
+}

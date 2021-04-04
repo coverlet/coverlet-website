@@ -48,7 +48,7 @@ export const Slide = (props): ReactElement => {
           </div>
         </div>
         <div className="right">
-          {props.k == 0 && (
+          {props.k == 5 && (
             <Chart
               width={'600px'}
               height={'400px'}
