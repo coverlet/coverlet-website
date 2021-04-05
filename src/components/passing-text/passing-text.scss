@@ -1,0 +1,18 @@
+.passing-text {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  // height: 128px;
+  position: relative;
+  background-color: #f5f6fa;
+
+  .text {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: -32px;
+    height: 60px;
+    text-align: center;
+    color: #fff;
+    mix-blend-mode: difference;
+  }
+}

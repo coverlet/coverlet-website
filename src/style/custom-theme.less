@@ -6,7 +6,34 @@
 @font-family-base: 'Poppins', sans-serif;
 @placeholder-holder-bg: #6f8aaf;
 @placeholder-holder-bg-active: #92aaca;
-@base-color: #49f5ab;
+@base-color: #fdd03b;
+
+// @btn-ghost-border-color: #fff;
+// @btn-ghost-color: #fff;
+
+.rs-btn {
+  border-radius: 0 !important;
+}
+
+.rs-btn-primary {
+  color: #000 !important;
+}
+
+.rs-btn-ghost {
+  border-color: #fff !important;
+  color: #fff !important;
+
+  &:hover {
+    // border-color: rgba(255, 255, 255, 0.589) !important;
+    // color: rgba(255, 255, 255, 0.589) !important;
+    color: #003885 !important;
+    background-color: #fff;
+  }
+}
+
+.rs-nav-item-content {
+  color: #fff !important;
+}
 
 .rs-placeholder-active p{
   animation: placeholder-active 1s ease infinite !important;

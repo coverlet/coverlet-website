@@ -1,7 +1,19 @@
 .networks {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6fa;
+
   h1 {
     padding: 18px 0;
     color: #036dca;
+  }
+
+  .text {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 16px;
   }
 
   .networks-list {

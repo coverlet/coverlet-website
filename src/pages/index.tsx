@@ -9,11 +9,13 @@ import { Carousel } from '../components/carousel/carousel';
 import { Networks } from '../components/networks/networks';
 
 import './index.module.scss';
+import { PassingText } from '../components/passing-text/passing-text';
 
 const HomePage = () => {
   return (
     <div>
       <Carousel />
+      <PassingText />
       <Networks />
       <div className="full-container">
         <Services />

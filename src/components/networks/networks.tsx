@@ -64,7 +64,7 @@ const getClasses = (i: number) => {
 export const Networks = (): ReactElement => {
   return (
     <div className="networks container ">
-      <h1>Blockchains</h1>
+      <div className="text">on this networks</div>
       <div className="networks-list">
         {networks.map((network, i) => {
           return <Network key={i} classes={getClasses(i)} network={network} />;

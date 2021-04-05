@@ -51,6 +51,11 @@ const setBgFixed = (divs, fixed) => {
   }
 };
 
+const setPassingText = () => {
+  const elem = document.getElementById('passing-text');
+  elem.style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 44.9706, 0, 1)';
+};
+
 export const Services = (): ReactElement => {
   const scrollElem = useContext(SmoothScrollContext);
 
@@ -83,7 +88,7 @@ export const Services = (): ReactElement => {
           gsap.to('#bgpath1', {
             morphSVG: cardData[i].svgBgSelector,
             duration: 0.5,
-            ease: Bounce.easeOut,
+            ease: Expo.easeOut,
             fill: cardData[i].svgBgColor,
           });
           gsap.to('#shape1', {
@@ -137,7 +142,7 @@ export const Services = (): ReactElement => {
           gsap.to('#bgpath1', {
             morphSVG: i > 0 ? cardData[i - 1].svgBgSelector : cardData[0].svgBgSelector,
             duration: 0.5,
-            ease: Bounce.easeOut,
+            ease: Expo.easeOut,
             fill: i > 0 ? cardData[i - 1].svgBgColor : cardData[0].svgBgColor,
           });
           gsap.to('#shape1', {
@@ -197,18 +202,22 @@ export const Services = (): ReactElement => {
       onEnter: () => {
         setBgFixed(bgDivs, true);
         scroller.update();
+        setPassingText();
       },
       onEnterBack: () => {
         setBgFixed(bgDivs, true);
         scroller.update();
+        setPassingText();
       },
       onLeaveBack: () => {
         setBgFixed(bgDivs, false);
         scroller.update();
+        setPassingText();
       },
       onLeave: () => {
         setBgFixed(bgDivs, false);
         scroller.update();
+        setPassingText();
       },
     });
 
