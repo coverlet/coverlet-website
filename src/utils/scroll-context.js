@@ -9,52 +9,34 @@ export const SmoothScrollContext = createContext({
 
 export const SmoothScrollProvider = ({ children, options }) => {
   const [scroll, setScroll] = useState(null);
+  const [scrollTop, setScrollTop] = useState(0);
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
-    if (!scroll) {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.registerPlugin(MorphSVGPlugin);
-
-      (async () => {
-        try {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default;
-          const el = document.querySelector('[data-scroll-container]');
-          const scroll = new LocomotiveScroll({
-            el: el ?? undefined,
-            ...options,
-          });
-
-          scroll.on('scroll', ScrollTrigger.update);
-          const pageContainer = document.querySelector('[data-scroll-container]');
-          ScrollTrigger.scrollerProxy(pageContainer, {
-            scrollTop(value) {
-              return arguments.length
-                ? scroll.scrollTo(value, 0, 0)
-                : scroll.scroll.instance.scroll.y;
-            },
-            getBoundingClientRect() {
-              return {
-                left: 0,
-                top: 0,
-                width: window.innerWidth,
-                height: window.innerHeight,
-              };
-            },
-          });
-
-          setScroll(scroll);
-        } catch (error) {
-          throw Error(`[SmoothScrollProvider]: ${error}`);
-        }
-      })();
+    if (scroll) {
+      return;
     }
 
-    return () => {
-      scroll && scroll.destroy();
-    };
-  }, [scroll]); // eslint-disable-line react-hooks/exhaustive-deps
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(MorphSVGPlugin);
 
-  return <SmoothScrollContext.Provider value={{ scroll }}>{children}</SmoothScrollContext.Provider>;
+    const onScroll = (e) => {
+      setScrollTop(e.target.documentElement.scrollTop);
+      setScrolling(e.target.documentElement.scrollTop > scrollTop);
+    };
+    window.addEventListener('scroll', onScroll);
+    setScroll(1);
+
+    return () => {
+      return () => onScroll && window.removeEventListener('scroll', onScroll);
+    };
+  }); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return (
+    <SmoothScrollContext.Provider value={{ scroll, scrollTop, scrolling }}>
+      {children}
+    </SmoothScrollContext.Provider>
+  );
 };
 
 SmoothScrollContext.displayName = 'SmoothScrollContext';

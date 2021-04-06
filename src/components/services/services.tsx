@@ -36,17 +36,19 @@ const cardData = [
   },
 ];
 
-const setBgFixed = (divs, fixed) => {
+const setBgFixed = (divs, textDivs, fixed) => {
   for (const e of divs) {
     if (fixed) {
-      e.setAttribute('data-scroll', 'true');
-      e.setAttribute('data-scroll-sticky', 'true');
-      e.setAttribute('data-scroll-target', '.main-container');
       e.classList.add('fixed');
     } else {
-      e.removeAttribute('data-scroll');
-      e.removeAttribute('data-scroll-sticky');
-      e.removeAttribute('data-scroll-target');
+      e.classList.remove('fixed');
+    }
+  }
+  for (const e of textDivs) {
+    if (fixed) {
+      e.classList.add('is-fixed');
+    } else {
+      e.classList.remove('is-fixed');
     }
   }
 };
@@ -63,7 +65,8 @@ export const Services = (): ReactElement => {
     if (!scrollElem.scroll) {
       return;
     }
-    const scroller = scrollElem.scroll;
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+    // const scroller = scrollElem.scroll;
 
     // fetch all required html elements
     const cards = document.querySelectorAll('.card');
@@ -77,10 +80,11 @@ export const Services = (): ReactElement => {
     cards.forEach((card, i) => {
       ScrollTrigger.create({
         trigger: card,
-        scroller: '[data-scroll-container]',
+        // scroller: '[data-scroll-container]',
         start: 'top 50%',
         scrub: true,
         onEnter: () => {
+          console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
           gsap.to('.bg-overlay', {
             backgroundImage: cardData[i].background,
             overwrite: 'auto',
@@ -191,32 +195,34 @@ export const Services = (): ReactElement => {
       });
     });
 
-    const bgDivs = document.getElementsByClassName('services-bg') as any;
+    // const bgDivs = document.getElementsByClassName('services-bg') as any;
+    const bgDivs = document.getElementsByClassName('xxxxx') as any;
+    const textDivs = document.getElementsByClassName('edge-text') as any;
 
     ScrollTrigger.create({
       trigger: '.services-parent',
-      scroller: '[data-scroll-container]',
+      // scroller: '[data-scroll-container]',
       start: 'top 100%',
       end: 'bottom 100%',
       scrub: true,
       onEnter: () => {
-        setBgFixed(bgDivs, true);
-        scroller.update();
+        setBgFixed(bgDivs, textDivs, true);
+        // scroller.update();
         setPassingText();
       },
       onEnterBack: () => {
-        setBgFixed(bgDivs, true);
-        scroller.update();
+        setBgFixed(bgDivs, textDivs, true);
+        // scroller.update();
         setPassingText();
       },
       onLeaveBack: () => {
-        setBgFixed(bgDivs, false);
-        scroller.update();
+        setBgFixed(bgDivs, textDivs, false);
+        // scroller.update();
         setPassingText();
       },
       onLeave: () => {
-        setBgFixed(bgDivs, false);
-        scroller.update();
+        setBgFixed(bgDivs, textDivs, false);
+        // scroller.update();
         setPassingText();
       },
     });
@@ -224,13 +230,15 @@ export const Services = (): ReactElement => {
     return () => {
       //ScrollTrigger.getById("trigger1").kill(true);
     };
-  }, [scrollElem]);
+  }, [scrollElem.scroll]);
 
   return (
     <>
       <div className="egde-card first full-container" id="scroll-offer">
-        <div className="services-bg bg-contrast "></div>
-        <div className="services-bg bg-overlay "></div>
+        <div className="xxxxx">
+          <div className="services-bg bg-contrast "></div>
+          <div className="services-bg bg-overlay "></div>
+        </div>
         <div className="edge-text">
           <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
             What we offer
