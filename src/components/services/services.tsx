@@ -62,6 +62,7 @@ export const Services = (): ReactElement => {
   const scrollElem = useContext(SmoothScrollContext);
 
   useEffect(() => {
+    return;
     if (!scrollElem.scroll) {
       return;
     }
@@ -233,19 +234,21 @@ export const Services = (): ReactElement => {
   }, [scrollElem.scroll]);
 
   return (
-    <>
+    <div className="full-container" style={{ backgroundColor: '#f5f6fa' }}>
       <div className="egde-card first full-container" id="scroll-offer">
-        <div className="xxxxx">
-          <div className="services-bg bg-contrast "></div>
-          <div className="services-bg bg-overlay "></div>
-        </div>
         <div className="edge-text">
           <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
             What we offer
           </div>
         </div>
       </div>
-      <div className="services-parent">
+      <div className="ssss">ssss</div>
+      <div className="services-parent" style={{}}>
+        <div className="aaaaaa">
+          <div className="a" style={{ backgroundColor: '#000' }}></div>
+          <div className="a" style={{ backgroundColor: '#5ae0ae', mixBlendMode: 'screen' }}></div>
+        </div>
+
         <div className="services" id="scroll-services">
           <div className="card full container">
             <div
@@ -298,6 +301,6 @@ export const Services = (): ReactElement => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
