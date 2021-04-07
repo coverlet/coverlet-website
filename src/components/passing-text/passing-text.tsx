@@ -11,7 +11,7 @@ const translateY = (scrollTop) => {
 };
 
 export const PassingText = (): ReactElement => {
-  const scrollElem = useContext(SmoothScrollContext);
+  const scrollElem = useContext(SmoothScrollContext) as any;
 
   const inputEl = useRef(null);
   // useEffect(() => {}, []);
