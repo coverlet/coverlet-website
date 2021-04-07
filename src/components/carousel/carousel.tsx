@@ -44,85 +44,87 @@ export const Carousel = (): ReactElement => {
   }, []);
 
   return (
-    <div className="carousel full-container">
-      <div className="slide-top">
-        <div className="title">{slides[0].title}</div>
-        <div className="subtitle">{slides[0].subtitle}</div>
-      </div>
-      <div className="content" style={{ height: '300px' }}>
-        {browser && (
-          <LineChart
-            width={600}
-            height={300}
-            data={data}
-            margin={{ top: 5, right: 40, left: 40, bottom: 5 }}
-          >
-            <YAxis width={0} domain={['auto', 'auto']} />
-            <Tooltip
-              cursor={false}
-              animationDuration={100}
-              content={(props) => {
-                if (!tooltip || !props.payload[0]?.payload?.date || !props.active) {
-                  return null;
-                }
-                return (
-                  <div
-                    style={{ fontSize: '12px', backgroundColor: '#00000033', padding: '2px 4px' }}
-                  >
-                    ${props.payload[0]?.payload?.val}
-                  </div>
-                );
-              }}
-            />
-            <Line
-              animationDuration={2000}
-              type="monotone"
-              dataKey="val"
-              stroke="#fdd03b"
-              offset={20}
-              yAxisId={0}
-              dot={{
-                r: 2,
-              }}
-              activeDot={{
-                r: 4,
-                onMouseOver: () => {
-                  showTooltip(true);
-                },
-                onMouseLeave: () => {
-                  showTooltip(false);
-                },
-              }}
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              label={(props) => {
-                const { x, y, stroke, value, index } = props;
-                if (index < data.length - 1) {
-                  return null;
-                }
-                return (
-                  <g>
-                    <rect x={x - 24} y={y - 28} width="48" height="22" fill="#fdd03b" />
-                    <text
-                      x={x}
-                      y={y}
-                      dy={-12}
-                      fill="#000"
-                      fontWeight="bold"
-                      fontSize={16}
-                      textAnchor="middle"
+    <div style={{ backgroundColor: '#000' }}>
+      <div className="carousel full-container">
+        <div className="slide-top">
+          <div className="title">{slides[0].title}</div>
+          <div className="subtitle">{slides[0].subtitle}</div>
+        </div>
+        <div className="content" style={{ height: '300px' }}>
+          {browser && (
+            <LineChart
+              width={600}
+              height={300}
+              data={data}
+              margin={{ top: 5, right: 40, left: 40, bottom: 5 }}
+            >
+              <YAxis width={0} domain={['auto', 'auto']} />
+              <Tooltip
+                cursor={false}
+                animationDuration={100}
+                content={(props) => {
+                  if (!tooltip || !props.payload[0]?.payload?.date || !props.active) {
+                    return null;
+                  }
+                  return (
+                    <div
+                      style={{ fontSize: '12px', backgroundColor: '#00000033', padding: '2px 4px' }}
                     >
-                      ${value}
-                    </text>
-                  </g>
-                );
-              }}
-            />
-          </LineChart>
-        )}
-      </div>
-      <div className="slide-bottom">
-        <Button appearance="ghost">Stake with us</Button>
+                      ${props.payload[0]?.payload?.val}
+                    </div>
+                  );
+                }}
+              />
+              <Line
+                animationDuration={2000}
+                type="monotone"
+                dataKey="val"
+                stroke="#fdd03b"
+                offset={20}
+                yAxisId={0}
+                dot={{
+                  r: 2,
+                }}
+                activeDot={{
+                  r: 4,
+                  onMouseOver: () => {
+                    showTooltip(true);
+                  },
+                  onMouseLeave: () => {
+                    showTooltip(false);
+                  },
+                }}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                label={(props) => {
+                  const { x, y, stroke, value, index } = props;
+                  if (index < data.length - 1) {
+                    return null;
+                  }
+                  return (
+                    <g>
+                      <rect x={x - 24} y={y - 28} width="48" height="22" fill="#fdd03b" />
+                      <text
+                        x={x}
+                        y={y}
+                        dy={-12}
+                        fill="#000"
+                        fontWeight="bold"
+                        fontSize={16}
+                        textAnchor="middle"
+                      >
+                        ${value}
+                      </text>
+                    </g>
+                  );
+                }}
+              />
+            </LineChart>
+          )}
+        </div>
+        <div className="slide-bottom">
+          <Button appearance="ghost">Stake with us</Button>
+        </div>
       </div>
     </div>
   );

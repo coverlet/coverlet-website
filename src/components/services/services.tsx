@@ -62,15 +62,51 @@ export const Services = (): ReactElement => {
   const scrollElem = useContext(SmoothScrollContext);
 
   useEffect(() => {
-    return;
     if (!scrollElem.scroll) {
       return;
     }
+
+    const sela = document.getElementById('scroll-services');
+    const sel = document.getElementsByClassName('card');
+
+    // sela.style.display = 'none';
+    // sela.offsetHeight; // no need to store this anywhere, the reference is enough
+
+    // setTimeout(() => {
+    //   sela.style.display = '';
+    //   sela.style.minHeight = '101vh';
+    // }, 100);
+
+    // sel[0].style.display = 'none';
+    // sel[0].offsetHeight; // no need to store this anywhere, the reference is enough
+
+    // setTimeout(() => {
+    //   sel[0].style.display = '';
+    //   sel[0].style.minHeight = '101vh';
+    // }, 100);
+
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, i) => {
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top 50%',
+        scrub: true,
+        onEnter: () => {
+          console.log('xxxxx');
+          sela.style.display = 'none';
+          sela.offsetHeight;
+          sela.style.display = '';
+          // sela.style.minHeight = '100vh';
+        },
+      });
+    });
+
+    return;
     console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
     // const scroller = scrollElem.scroll;
 
     // fetch all required html elements
-    const cards = document.querySelectorAll('.card');
+    const cardsx = document.querySelectorAll('.card');
     const images = [];
     cardData.forEach((card, i) => {
       images[i] = document.getElementById(card.img);
@@ -235,20 +271,21 @@ export const Services = (): ReactElement => {
 
   return (
     <div className="full-container" style={{ backgroundColor: '#f5f6fa' }}>
-      <div className="egde-card first full-container" id="scroll-offer">
-        <div className="edge-text">
-          <div className="title" data-scroll data-scroll-sticky data-scroll-target="#scroll-offer">
-            What we offer
+      <div className="services-parent" style={{}}>
+        <div className="egde-card first full-container" id="scroll-offer">
+          <div className="edge-text">
+            <div
+              className="title"
+              data-scroll
+              data-scroll-sticky
+              data-scroll-target="#scroll-offer"
+            >
+              What we offer
+            </div>
           </div>
         </div>
-      </div>
-      <div className="ssss">ssss</div>
-      <div className="services-parent" style={{}}>
-        <div className="aaaaaa">
-          <div className="a" style={{ backgroundColor: '#000' }}></div>
-          <div className="a" style={{ backgroundColor: '#5ae0ae', mixBlendMode: 'screen' }}></div>
-        </div>
-
+        <div className="ssss">ssss</div>
+        <div className="aaaaaa"></div>
         <div className="services" id="scroll-services">
           <div className="card full container">
             <div
@@ -260,7 +297,7 @@ export const Services = (): ReactElement => {
               <ServicesHero />
             </div>
             <div className="content">
-              <div className="title">Availability</div>
+              <div className="title-content">Availability</div>
               <div>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum has been the industrys standard dummy text ever since the 1500s,
@@ -269,7 +306,7 @@ export const Services = (): ReactElement => {
           </div>
           <div className="card full container">
             <div className="content">
-              <div className="title">Realibility</div>
+              <div className="title-content">Realibility</div>
               <div>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum has been the industrys standard dummy text ever since the 1500s,
@@ -279,7 +316,7 @@ export const Services = (): ReactElement => {
 
           <div className="card full container">
             <div className="content">
-              <div className="title">Security</div>
+              <div className="title-content">Security</div>
               <div>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum has been the industrys standard dummy text ever since the 1500s,

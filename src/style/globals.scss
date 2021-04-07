@@ -3,6 +3,10 @@ body {
   color: #000 !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .small {
   font-size: 12px;
 }
