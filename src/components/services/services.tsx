@@ -101,8 +101,6 @@ export const Services = (): ReactElement => {
       });
     });
 
-    return;
-    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
     // const scroller = scrollElem.scroll;
 
     // fetch all required html elements
@@ -121,8 +119,7 @@ export const Services = (): ReactElement => {
         start: 'top 50%',
         scrub: true,
         onEnter: () => {
-          console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-          gsap.to('.bg-overlay', {
+          gsap.to('.aaaaaa', {
             backgroundImage: cardData[i].background,
             overwrite: 'auto',
           });
@@ -175,7 +172,7 @@ export const Services = (): ReactElement => {
         },
 
         onLeaveBack: () => {
-          gsap.to('.bg-overlay', {
+          gsap.to('.aaaaaa', {
             backgroundImage: i > 0 ? cardData[i - 1].background : cardData[0].background,
             overwrite: 'auto',
           });
@@ -232,37 +229,37 @@ export const Services = (): ReactElement => {
       });
     });
 
-    // const bgDivs = document.getElementsByClassName('services-bg') as any;
-    const bgDivs = document.getElementsByClassName('xxxxx') as any;
-    const textDivs = document.getElementsByClassName('edge-text') as any;
+    // // const bgDivs = document.getElementsByClassName('services-bg') as any;
+    // const bgDivs = document.getElementsByClassName('xxxxx') as any;
+    // const textDivs = document.getElementsByClassName('edge-text') as any;
 
-    ScrollTrigger.create({
-      trigger: '.services-parent',
-      // scroller: '[data-scroll-container]',
-      start: 'top 100%',
-      end: 'bottom 100%',
-      scrub: true,
-      onEnter: () => {
-        setBgFixed(bgDivs, textDivs, true);
-        // scroller.update();
-        setPassingText();
-      },
-      onEnterBack: () => {
-        setBgFixed(bgDivs, textDivs, true);
-        // scroller.update();
-        setPassingText();
-      },
-      onLeaveBack: () => {
-        setBgFixed(bgDivs, textDivs, false);
-        // scroller.update();
-        setPassingText();
-      },
-      onLeave: () => {
-        setBgFixed(bgDivs, textDivs, false);
-        // scroller.update();
-        setPassingText();
-      },
-    });
+    // ScrollTrigger.create({
+    //   trigger: '.services-parent',
+    //   // scroller: '[data-scroll-container]',
+    //   start: 'top 100%',
+    //   end: 'bottom 100%',
+    //   scrub: true,
+    //   onEnter: () => {
+    //     setBgFixed(bgDivs, textDivs, true);
+    //     // scroller.update();
+    //     setPassingText();
+    //   },
+    //   onEnterBack: () => {
+    //     setBgFixed(bgDivs, textDivs, true);
+    //     // scroller.update();
+    //     setPassingText();
+    //   },
+    //   onLeaveBack: () => {
+    //     setBgFixed(bgDivs, textDivs, false);
+    //     // scroller.update();
+    //     setPassingText();
+    //   },
+    //   onLeave: () => {
+    //     setBgFixed(bgDivs, textDivs, false);
+    //     // scroller.update();
+    //     setPassingText();
+    //   },
+    // });
 
     return () => {
       //ScrollTrigger.getById("trigger1").kill(true);
@@ -286,40 +283,39 @@ export const Services = (): ReactElement => {
         </div>
         <div className="ssss">ssss</div>
         <div className="aaaaaa"></div>
-        <div className="services" id="scroll-services">
-          <div className="card full container">
-            <div
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#scroll-services"
-              className="serv-hero"
-            >
+        <div className="services container" id="scroll-services">
+          <div className="serv-hero-track">
+            <div className="serv-hero">
               <ServicesHero />
             </div>
-            <div className="content">
-              <div className="title-content">Availability</div>
-              <div>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industrys standard dummy text ever since the 1500s,
+          </div>
+          <div className="cards">
+            <div className="card full">
+              <div className="content">
+                <div className="title-content">Availability</div>
+                <div>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industrys standard dummy text ever since the 1500s,
+                </div>
               </div>
             </div>
-          </div>
-          <div className="card full container">
-            <div className="content">
-              <div className="title-content">Realibility</div>
-              <div>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industrys standard dummy text ever since the 1500s,
+            <div className="card full">
+              <div className="content">
+                <div className="title-content">Realibility</div>
+                <div>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industrys standard dummy text ever since the 1500s,
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="card full container">
-            <div className="content">
-              <div className="title-content">Security</div>
-              <div>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industrys standard dummy text ever since the 1500s,
+            <div className="card full">
+              <div className="content">
+                <div className="title-content">Security</div>
+                <div>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industrys standard dummy text ever since the 1500s,
+                </div>
               </div>
             </div>
           </div>

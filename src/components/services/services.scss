@@ -107,17 +107,21 @@
   z-index: 3;
   color: white;
   position: relative;
+  display: flex;
+  margin-top: -10vh;
 
   .serv-hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    width: 50%;
+    // width: 50%;
     text-align: center;
     justify-content: center;
     font-size: 36px;
     font-weight: bold;
     will-change: transform;
+    position: sticky;
+    top: 0;
   }
 
   .card {
@@ -130,6 +134,10 @@
     display: flex;
   }
 
+  .cards {
+    width: 50%;
+  }
+
   .content {
     .title-content {
       font-size: 32px;
@@ -137,8 +145,6 @@
       margin-bottom: 24px;
     }
 
-    width: 50%;
-    margin-left: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -182,4 +188,37 @@
   background-color: #000;
   top: 0;
   z-index: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .services {
+    &.container {
+      margin: 0;
+    }
+
+    .cards {
+      margin-left: -100%;
+      width: 100vw !important;
+    }
+
+    .serv-hero {
+      overflow: hidden;
+      width: 100vw;
+      opacity: 0.4;
+    }
+  }
+
+  .carousel {
+    .slide-top {
+      margin-top: 12vh !important;
+    }
+
+    .title {
+      font-size: 64px !important;
+    }
+
+    .subtitle {
+      font-size: 18px !important;
+    }
+  }
 }
