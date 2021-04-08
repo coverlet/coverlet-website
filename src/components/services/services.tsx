@@ -3,6 +3,12 @@ import { SmoothScrollContext } from '../../utils/scroll-context';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap, Bounce, Expo } from 'gsap';
 import { ServicesHero } from './components/services-hero/services-hero';
+import {
+  changeBgColorTo,
+  fadeAnimationWithKill,
+  morphSvgTo,
+  setVisibleImage,
+} from './services-utils';
 
 import './services.scss';
 
@@ -36,28 +42,6 @@ const cardData = [
   },
 ];
 
-const setBgFixed = (divs, textDivs, fixed) => {
-  for (const e of divs) {
-    if (fixed) {
-      e.classList.add('fixed');
-    } else {
-      e.classList.remove('fixed');
-    }
-  }
-  for (const e of textDivs) {
-    if (fixed) {
-      e.classList.add('is-fixed');
-    } else {
-      e.classList.remove('is-fixed');
-    }
-  }
-};
-
-const setPassingText = () => {
-  const elem = document.getElementById('passing-text');
-  elem.style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 44.9706, 0, 1)';
-};
-
 export const Services = (): ReactElement => {
   const scrollElem = useContext(SmoothScrollContext);
 
@@ -66,233 +50,109 @@ export const Services = (): ReactElement => {
       return;
     }
 
-    const sela = document.getElementById('scroll-services');
-    const sel = document.getElementsByClassName('card');
-
-    // sela.style.display = 'none';
-    // sela.offsetHeight; // no need to store this anywhere, the reference is enough
-
-    // setTimeout(() => {
-    //   sela.style.display = '';
-    //   sela.style.minHeight = '101vh';
-    // }, 100);
-
-    // sel[0].style.display = 'none';
-    // sel[0].offsetHeight; // no need to store this anywhere, the reference is enough
-
-    // setTimeout(() => {
-    //   sel[0].style.display = '';
-    //   sel[0].style.minHeight = '101vh';
-    // }, 100);
-
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, i) => {
-      ScrollTrigger.create({
-        trigger: card,
-        start: 'top 50%',
-        scrub: true,
-        onEnter: () => {
-          console.log('xxxxx');
-          sela.style.display = 'none';
-          sela.offsetHeight;
-          sela.style.display = '';
-          // sela.style.minHeight = '100vh';
-        },
-      });
-    });
-
-    // const scroller = scrollElem.scroll;
-
     // fetch all required html elements
-    const cardsx = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card');
+    const services = document.getElementById('scroll-services');
     const images = [];
     cardData.forEach((card, i) => {
       images[i] = document.getElementById(card.img);
     });
 
-    const extraAnimations = [];
-
+    // silly safari fix :(
     cards.forEach((card, i) => {
       ScrollTrigger.create({
         trigger: card,
-        // scroller: '[data-scroll-container]',
         start: 'top 50%',
         scrub: true,
         onEnter: () => {
-          gsap.to('.aaaaaa', {
-            backgroundImage: cardData[i].background,
-            overwrite: 'auto',
-          });
-          gsap.to('#bgpath1', {
-            morphSVG: cardData[i].svgBgSelector,
-            duration: 0.5,
-            ease: Expo.easeOut,
-            fill: cardData[i].svgBgColor,
-          });
-          gsap.to('#shape1', {
-            morphSVG: cardData[i].svgShapeSelector,
-            duration: 0.5,
-            ease: Expo.easeOut,
-            fill: cardData[i].svgShapeColor,
-            delay: 0.3,
-          });
-
-          if (extraAnimations[i]) {
-            extraAnimations[i].kill();
-          }
-          extraAnimations[i] = gsap.to(cardData[i].svgExtraSelector, {
-            duration: 0.5,
-            ease: Expo.easeOut,
-            opacity: 1,
-            delay: 0.5,
-          });
-          if (cardData[i - 1]) {
-            if (extraAnimations[i - 1]) {
-              extraAnimations[i - 1].kill();
-            }
-            extraAnimations[i - 1] = gsap.to(cardData[i - 1].svgExtraSelector, {
-              duration: 0.5,
-              ease: Expo.easeOut,
-              opacity: 0,
-              delay: 0.2,
-            });
-          }
-
-          if (images[i - 1]) {
-            images[i - 1].style.transitionDelay = '0s';
-            images[i - 1].style.transitionDuration = '0.1s';
-            images[i - 1].classList.remove('visible');
-          }
-
-          if (images[i]) {
-            images[i].style.transitionDelay = '0.6s';
-            images[i].style.transitionDuration = '0.4s';
-            images[i].classList.add('visible');
-          }
-        },
-
-        onLeaveBack: () => {
-          gsap.to('.aaaaaa', {
-            backgroundImage: i > 0 ? cardData[i - 1].background : cardData[0].background,
-            overwrite: 'auto',
-          });
-
-          gsap.to('#bgpath1', {
-            morphSVG: i > 0 ? cardData[i - 1].svgBgSelector : cardData[0].svgBgSelector,
-            duration: 0.5,
-            ease: Expo.easeOut,
-            fill: i > 0 ? cardData[i - 1].svgBgColor : cardData[0].svgBgColor,
-          });
-          gsap.to('#shape1', {
-            morphSVG: i > 0 ? cardData[i - 1].svgShapeSelector : cardData[0].svgShapeSelector,
-            duration: 0.5,
-            ease: Expo.easeOut,
-            fill: i > 0 ? cardData[i - 1].svgShapeColor : cardData[0].svgShapeColor,
-            delay: 0.3,
-          });
-
-          if (extraAnimations[i]) {
-            extraAnimations[i].kill();
-          }
-          if (i > 0) {
-            extraAnimations[i] = gsap.to(cardData[i].svgExtraSelector, {
-              duration: 0.5,
-              ease: Expo.easeOut,
-              opacity: 0,
-              delay: 0.2,
-            });
-          }
-          if (cardData[i - 1]) {
-            if (extraAnimations[i - 1]) {
-              extraAnimations[i - 1].kill();
-            }
-            extraAnimations[i - 1] = gsap.to(cardData[i - 1].svgExtraSelector, {
-              duration: 0.5,
-              ease: Expo.easeOut,
-              opacity: 1,
-              delay: 0.5,
-            });
-          }
-
-          if (images[i]) {
-            images[i].style.transitionDelay = '0s';
-            images[i].style.transitionDuration = '0.1s';
-            images[i].classList.remove('visible');
-          }
-
-          if (images[i - 1]) {
-            images[i - 1].style.transitionDelay = '0.6s';
-            images[i - 1].style.transitionDuration = '0.4s';
-            images[i - 1].classList.add('visible');
-          }
+          services.style.display = 'none';
+          services.offsetHeight;
+          services.style.display = '';
         },
       });
     });
 
-    // // const bgDivs = document.getElementsByClassName('services-bg') as any;
-    // const bgDivs = document.getElementsByClassName('xxxxx') as any;
-    // const textDivs = document.getElementsByClassName('edge-text') as any;
+    // all the cars animations
+    cards.forEach((card, i) => {
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top 50%',
+        scrub: true,
+        onEnter: () => {
+          // change page bg color
+          changeBgColorTo(gsap, '.bg-overlay', cardData[i].background);
 
-    // ScrollTrigger.create({
-    //   trigger: '.services-parent',
-    //   // scroller: '[data-scroll-container]',
-    //   start: 'top 100%',
-    //   end: 'bottom 100%',
-    //   scrub: true,
-    //   onEnter: () => {
-    //     setBgFixed(bgDivs, textDivs, true);
-    //     // scroller.update();
-    //     setPassingText();
-    //   },
-    //   onEnterBack: () => {
-    //     setBgFixed(bgDivs, textDivs, true);
-    //     // scroller.update();
-    //     setPassingText();
-    //   },
-    //   onLeaveBack: () => {
-    //     setBgFixed(bgDivs, textDivs, false);
-    //     // scroller.update();
-    //     setPassingText();
-    //   },
-    //   onLeave: () => {
-    //     setBgFixed(bgDivs, textDivs, false);
-    //     // scroller.update();
-    //     setPassingText();
-    //   },
-    // });
+          // morph and color bg shap
+          morphSvgTo(gsap, '#bgpath1', cardData[i].svgBgSelector, cardData[i].svgBgColor);
+
+          // morph and color main shape
+          morphSvgTo(gsap, '#shape1', cardData[i].svgShapeSelector, cardData[i].svgShapeColor, 0.3);
+
+          // show / hide extra svg elements
+          fadeAnimationWithKill(gsap, cardData[i].svgExtraSelector, 1, 0.5);
+          cardData[i - 1] && fadeAnimationWithKill(gsap, cardData[i - 1].svgExtraSelector, 0, 0.2);
+
+          // show / hide svg images
+          images[i - 1] && setVisibleImage(images[i - 1], false);
+          images[i] && setVisibleImage(images[i], true);
+        },
+
+        onLeaveBack: () => {
+          const card = i > 0 ? cardData[i - 1] : cardData[0];
+          changeBgColorTo(gsap, '.bg-overlay', card.background);
+          morphSvgTo(gsap, '#bgpath1', card.svgBgSelector, card.svgBgColor);
+          morphSvgTo(gsap, '#shape1', card.svgShapeSelector, card.svgShapeColor, 0.3);
+          i > 0 && fadeAnimationWithKill(gsap, cardData[i].svgExtraSelector, 0, 0.2);
+          i > 0 && fadeAnimationWithKill(gsap, cardData[i - 1].svgExtraSelector, 1, 0.5);
+          images[i] && setVisibleImage(images[i], false);
+          images[i - 1] && setVisibleImage(images[i - 1], true);
+        },
+      });
+    });
 
     return () => {
-      //ScrollTrigger.getById("trigger1").kill(true);
+      const triggers = ScrollTrigger.getAll();
+      triggers.forEach((trigger) => {
+        trigger.kill();
+      });
     };
   }, [scrollElem.scroll]);
 
   return (
-    <div className="full-container" style={{ backgroundColor: '#f5f6fa' }}>
-      <div className="services-parent" style={{}}>
-        <div className="egde-card first full-container" id="scroll-offer">
+    <div className="services-container full-container">
+      <div className="services-parent">
+        {/* first text card */}
+        <div className="egde-card first">
           <div className="edge-text">
-            <div
-              className="title"
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#scroll-offer"
-            >
-              What we offer
-            </div>
+            <div className="title">What we offer</div>
           </div>
         </div>
-        <div className="ssss">ssss</div>
-        <div className="aaaaaa"></div>
+        {/* black contrast sticky div */}
+        <div className="bg-contrast"></div>
+        {/* background color div */}
+        <div className="bg-overlay"></div>
+        {/* cards main area */}
         <div className="services container" id="scroll-services">
+          {/* sticky hero area */}
           <div className="serv-hero-track">
             <div className="serv-hero">
               <ServicesHero />
             </div>
           </div>
+          {/* cards */}
           <div className="cards">
             <div className="card full">
               <div className="content">
                 <div className="title-content">Availability</div>
+                <div>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industrys standard dummy text ever since the 1500s,
+                </div>
+              </div>
+            </div>
+            <div className="card full">
+              <div className="content">
+                <div className="title-content">Security</div>
                 <div>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                   Ipsum has been the industrys standard dummy text ever since the 1500s,
@@ -308,30 +168,14 @@ export const Services = (): ReactElement => {
                 </div>
               </div>
             </div>
-
-            <div className="card full">
-              <div className="content">
-                <div className="title-content">Security</div>
-                <div>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industrys standard dummy text ever since the 1500s,
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+        {/* best way to pus a placeholder here */}
         <div style={{ height: '100vh' }}></div>
       </div>
-      <div className="egde-card last full-container" id="scroll-offer-end">
+      <div className="egde-card last full-container">
         <div className="edge-text">
-          <div
-            className="title"
-            data-scroll
-            data-scroll-sticky
-            data-scroll-target="#scroll-offer-end"
-          >
-            Thats all floks!
-          </div>
+          <div className="title">Thats all floks!</div>
         </div>
       </div>
     </div>
