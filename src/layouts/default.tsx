@@ -24,8 +24,6 @@ export const DefaultLayout = ({
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> */}
       </Head>
       <Container className="main-container">
         <Header />

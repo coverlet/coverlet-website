@@ -6,8 +6,8 @@ const translateY = (scrollTop) => {
   if (!scrollTop) {
     scrollTop = 0;
   }
-  let mt = scrollTop / 10;
-  return mt > 42 ? 42 : mt;
+  const mt = scrollTop / 300;
+  return mt > 2.2 ? 2.2 : mt;
 };
 
 export const PassingText = (): ReactElement => {
@@ -25,7 +25,7 @@ export const PassingText = (): ReactElement => {
         className="text"
         id="passing-text"
         ref={inputEl}
-        style={{ transform: `translateY(${translateY(scrollElem.scrollTop)}px)` }}
+        style={{ transform: `translateY(${translateY(scrollElem.scrollTop)}em)` }}
       >
         Stake with us
       </div>

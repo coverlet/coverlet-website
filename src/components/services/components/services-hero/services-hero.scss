@@ -1,37 +1,39 @@
 .services-hero {
+  width: 80%;
+
   #img_availability {
     position: absolute;
-    top: 155px;
-    left: 116px;
-    width: 400px;
+    top: 37%;
+    left: 27%;
+    width: 85%;
     opacity: 0;
     transition: all 0.4s ease 0.4s;
 
     &.visible {
-      transform: translateY(-50px);
+      transform: translateY(-15%);
       opacity: 1;
     }
   }
 
   #img_security {
     position: absolute;
-    width: 400px;
-    top: -114px;
-    left: 0px;
+    width: 85%;
+    top: -13%;
+    left: -2%;
     opacity: 0;
     transition: all 0.4s ease 0.4s;
 
     &.visible {
-      transform: translateX(60px);
+      transform: translateX(22%);
       opacity: 1;
     }
   }
 
   #img_reliability {
     position: absolute;
-    width: 400px;
-    top: 111px;
-    left: 15px;
+    width: 85%;
+    top: 27%;
+    left: 17%;
     opacity: 0;
     transition: all 0.4s ease 0.4s;
 

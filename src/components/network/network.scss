@@ -1,3 +1,5 @@
+@import '../../style/variables.scss';
+
 .network {
   position: relative;
   z-index: 2;
@@ -21,7 +23,7 @@
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: #{$bp-large}) {
     width: 33%;
 
     &:nth-child(even) {
@@ -43,7 +45,7 @@
     }
   }
 
-  @media screen and (max-width: 676px) {
+  @media screen and (max-width: #{$bp-small}) {
     width: 50%;
 
     &:nth-child(even) {
@@ -63,6 +65,10 @@
         background-color: #f9fafc;
       }
     }
+
+    button.rs-btn {
+      font-size: 0.8em;
+    }
   }
 
   &:before {
@@ -77,53 +83,69 @@
     position: absolute;
     background-color: #ffffff;
     margin: 8px;
-    padding: 32px;
+    padding: 2em;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 32px;
+    // border-radius: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     .name {
       margin-top: 12px;
-      font-size: 24px;
+      font-size: 1.2em;
       text-transform: uppercase;
     }
 
     .logo {
       img {
-        width: 32px;
-        height: 32px;
+        width: 2em;
+        height: 2em;
       }
     }
 
     .status {
-      margin-top: 12px;
+      margin-top: 0.2em;
       display: flex;
+
+      .status-text {
+        font-size: 0.9em;
+      }
+    }
+
+    @media screen and (max-width: #{$bp-small}) {
+      padding: 16px;
     }
   }
 
   .led-green {
-    margin-top: 7px;
+    margin-top: 0.7em;
     margin-left: -12px;
     width: 6px;
     height: 6px;
     background-color: #abff00;
     border-radius: 50%;
     box-shadow: rgb(0 0 0 / 20%) 0 -1px 3px 1px, inset #304701 0 -1px 3px, #89ff00 0 2px 5px;
+
+    @media screen and (max-width: #{$bp-small}) {
+      margin-top: 7px;
+    }
   }
 
   .led-yellow {
-    margin-top: 7px;
+    margin-top: 0.7em;
     margin-left: -12px;
     width: 6px;
     height: 6px;
     background-color: #fffb00;
     border-radius: 50%;
     box-shadow: rgb(0 0 0 / 20%) 0 -1px 3px 1px, inset #ff9f17 0 -1px 3px, #f8e004 0 2px 5px;
+
+    @media screen and (max-width: #{$bp-small}) {
+      margin-top: 7px;
+    }
   }
 
   .status-text {
@@ -137,5 +159,9 @@
   .bottom-part {
     display: flex;
     justify-content: flex-end;
+  }
+
+  button.rs-btn.rs-btn-subtle {
+    color: #000;
   }
 }

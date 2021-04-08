@@ -10,11 +10,9 @@ export const Header = (): ReactElement => {
       <div className="container">
         <div className="logo">Coverlet</div>
         <div className="nav">
-          <Nav>
-            <Nav.Item>About us</Nav.Item>
-            <Nav.Item>Networks</Nav.Item>
-            <Nav.Item>Projects</Nav.Item>
-          </Nav>
+          <Button appearance="subtle">Networks</Button>
+          <Button appearance="subtle">Projects</Button>
+          <Button appearance="subtle">About us</Button>
         </div>
         <div>
           <Button appearance="primary">Stake with us</Button>

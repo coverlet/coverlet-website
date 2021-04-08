@@ -17,6 +17,7 @@ export const ServicesHero = (): ReactElement => {
         style={{ position: 'absolute' }}
         src={'availability.svg'}
         alt="Availabilty"
+        className="visible"
       />
       <img id="img_security" style={{ position: 'absolute' }} src={'security.svg'} alt="Security" />
       <img

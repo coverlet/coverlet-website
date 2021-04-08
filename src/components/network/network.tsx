@@ -34,7 +34,7 @@ export const Network = ({ network, classes }: IProps): ReactElement => {
         </div>
 
         <div className="bottom-part">
-          <Button appearance="default">Delegate</Button>
+          <Button appearance="subtle">Delegate</Button>
         </div>
       </div>
     </div>

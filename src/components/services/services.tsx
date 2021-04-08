@@ -104,7 +104,7 @@ export const Services = (): ReactElement => {
           morphSvgTo(gsap, '#shape1', card.svgShapeSelector, card.svgShapeColor, 0.3);
           i > 0 && fadeAnimationWithKill(gsap, cardData[i].svgExtraSelector, 0, 0.2);
           i > 0 && fadeAnimationWithKill(gsap, cardData[i - 1].svgExtraSelector, 1, 0.5);
-          images[i] && setVisibleImage(images[i], false);
+          i > 0 && images[i] && setVisibleImage(images[i], false);
           images[i - 1] && setVisibleImage(images[i - 1], true);
         },
       });

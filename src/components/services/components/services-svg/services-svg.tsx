@@ -4,7 +4,7 @@ import './services-svg.scss';
 export const ServicesSvg = (): ReactElement => {
   return (
     <div className="services-svg">
-      <svg height="600" width="400" viewBox="0 0 595 840">
+      <svg viewBox="0 0 595 840">
         <path id="bgpath1" d="M 103.4 211.47 L 56.96 688.03 L 539.04 643.46 L 473.81 153.97  Z" />
         <path id="bgpath2" d="M 384 112 L -6 396 L 155 733 L 532 675  Z" />
         <path id="bgpath3" d="M 591 76 L 545 769 L 6 711 L 109 70  Z" />

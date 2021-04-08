@@ -54,7 +54,7 @@ export const Carousel = (): ReactElement => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#000' }}>
+    <div className="carousel-fix full-container">
       <div className="carousel full-container">
         <div className="slide-top">
           <div className="title">{slides[0].title}</div>
