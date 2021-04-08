@@ -1,5 +1,7 @@
 import React, { PureComponent, ReactElement, useEffect, useState } from 'react';
 import {
+  Area,
+  AreaChart,
   CartesianGrid,
   Line,
   LineChart,
@@ -58,15 +60,22 @@ export const Carousel = (): ReactElement => {
           <div className="title">{slides[0].title}</div>
           <div className="subtitle">{slides[0].subtitle}</div>
         </div>
-        <div className="content" style={{ height: '300px', width: '100%' }}>
+        <div className="content" style={{ flex: '1', height: 'auto', width: '100%' }}>
           {browser && (
             <ResponsiveContainer>
-              <LineChart
-                width={600}
-                height={300}
+              <AreaChart
+                // width={600}
+                // height={500}
                 data={data}
-                margin={{ top: 5, right: 40, left: 40, bottom: 5 }}
+                margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
               >
+                <defs>
+                  <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#ffffff" stopOpacity={0.8} />
+                    <stop offset="75%" stopColor="#FFFFFF" stopOpacity={0.1} />
+                    <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
                 <YAxis width={0} domain={['auto', 'auto']} />
                 <Tooltip
                   cursor={false}
@@ -88,11 +97,12 @@ export const Carousel = (): ReactElement => {
                     );
                   }}
                 />
-                <Line
+                <Area
                   animationDuration={2000}
                   type="monotone"
                   dataKey="val"
-                  stroke="#fdd03b"
+                  stroke="none"
+                  fill="url(#colorUv)"
                   offset={20}
                   yAxisId={0}
                   dot={{
@@ -112,13 +122,27 @@ export const Carousel = (): ReactElement => {
                   label={(props) => {
                     const { x, y, stroke, value, index } = props;
                     if (index < data.length - 1) {
-                      return null;
+                      return (
+                        <g>
+                          <text
+                            x={x}
+                            y={y}
+                            dy={-12}
+                            fill="#fff"
+                            fontWeight="bold"
+                            fontSize={12}
+                            textAnchor="middle"
+                          >
+                            ${value}
+                          </text>
+                        </g>
+                      );
                     }
                     return (
                       <g>
-                        <rect x={x - 24} y={y - 28} width="48" height="22" fill="#fdd03b" />
+                        <rect x={x - 54} y={y - 28} width="48" height="22" fill="#fdd03b" />
                         <text
-                          x={x}
+                          x={x - 30}
                           y={y}
                           dy={-12}
                           fill="#000"
@@ -132,7 +156,7 @@ export const Carousel = (): ReactElement => {
                     );
                   }}
                 />
-              </LineChart>
+              </AreaChart>
             </ResponsiveContainer>
           )}
         </div>
