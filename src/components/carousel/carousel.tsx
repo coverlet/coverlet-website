@@ -50,7 +50,9 @@ export const Carousel = (): ReactElement => {
   const [tooltip, showTooltip] = useState(false);
 
   useEffect(() => {
-    setBrowser(true);
+    setTimeout(() => {
+      setBrowser(true);
+    }, 100);
   }, []);
 
   return (
@@ -105,6 +107,7 @@ export const Carousel = (): ReactElement => {
                   fill="url(#colorUv)"
                   offset={20}
                   yAxisId={0}
+                  animationEasing="ease"
                   dot={{
                     r: 2,
                   }}
