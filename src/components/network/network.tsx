@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import Button from 'rsuite/lib/Button';
+import Ripple from 'rsuite/lib/Ripple';
 import { INetwork } from '../../redux/types';
 
 import './network.scss';
@@ -12,7 +13,9 @@ interface IProps {
 export const Network = ({ network, classes }: IProps): ReactElement => {
   return (
     <div className="network">
-      <div className={`inner ${classes}`}>
+      <div className={`inner rs-btn-subtle ${classes}`}>
+        <span className="rs-ripple reveal-ripple"></span>
+        <Ripple />
         <div className="top-part">
           <div className="logo">
             <img src={network.icon} alt={network.name} />
