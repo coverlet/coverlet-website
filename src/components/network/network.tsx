@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
+import { useSelector } from 'react-redux';
 import Button from 'rsuite/lib/Button';
 import Ripple from 'rsuite/lib/Ripple';
+import { selectNetwork } from '../../redux/app';
 import { INetwork } from '../../redux/types';
 
 import './network.scss';
@@ -8,12 +10,19 @@ import './network.scss';
 interface IProps {
   network: INetwork;
   classes: string;
+  onClick: any;
 }
 
-export const Network = ({ network, classes }: IProps): ReactElement => {
+export const Network = ({ network, classes, onClick }: IProps): ReactElement => {
+  const selectedNetwork: INetwork = useSelector(selectNetwork);
+
   return (
     <div className="network">
-      <div className={`inner rs-btn-subtle ${classes}`}>
+      <div
+        className={`inner rs-btn-subtle ${classes} ${selectedNetwork && 'network-selected'}`}
+        onClick={onClick}
+        role="button"
+      >
         <span className="rs-ripple reveal-ripple"></span>
         <Ripple />
         <div className="top-part">
@@ -36,9 +45,7 @@ export const Network = ({ network, classes }: IProps): ReactElement => {
           </div>
         </div>
 
-        <div className="bottom-part">
-          <Button appearance="subtle">Delegate</Button>
-        </div>
+        <div className="bottom-part">Delegate</div>
       </div>
     </div>
   );

@@ -1,5 +1,23 @@
 @import 'variables.scss';
 
+@font-face {
+  font-family: 'Eina';
+  src: url('/fonts/eina01-bold.woff2') format('woff2'),
+    url('/fonts/eina01-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eina';
+  src: url('/fonts/eina01-regular.woff2') format('woff2'),
+    url('/fonts/eina01-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: #f5f6fa !important;
   color: #000 !important;

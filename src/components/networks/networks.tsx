@@ -1,53 +1,11 @@
-import { ReactElement } from 'react';
+import { ReactElement, useRef, useEffect, useState } from 'react';
 import { Network } from '../network/network';
-import { INetwork } from '../../redux/types';
+import { NetworkInfo } from '../network-info/network-info';
+import { networks } from '../../core/networks';
+import { useDispatch } from 'react-redux';
+import { setNetwork } from '../../redux/app';
 
 import './networks.scss';
-
-const networks: INetwork[] = [
-  {
-    name: 'Solana',
-    icon: 'solana-logo.svg',
-    mainnet: true,
-    live: true,
-  },
-  {
-    name: 'Polkadot',
-    icon: 'polkadot-logo.svg',
-    mainnet: true,
-    live: true,
-  },
-  {
-    name: 'Kusama',
-    icon: 'kusama-logo.svg',
-    mainnet: true,
-    live: true,
-  },
-  {
-    name: 'Mina',
-    icon: 'mina-logo.png',
-    mainnet: true,
-    live: true,
-  },
-  {
-    name: 'Regen',
-    icon: 'regen-logo.png',
-    mainnet: true,
-    live: false,
-  },
-  {
-    name: 'Centrifuge',
-    icon: 'centrifuge-logo.svg',
-    mainnet: true,
-    live: true,
-  },
-  {
-    name: 'Matic',
-    icon: 'matic-logo.svg',
-    mainnet: false,
-    live: true,
-  },
-];
 
 const getClasses = (i: number) => {
   let classes = '';
@@ -62,13 +20,33 @@ const getClasses = (i: number) => {
 };
 
 export const Networks = (): ReactElement => {
+  const networksRef = useRef(null);
+  const dispatch = useDispatch();
+
   return (
-    <div className="networks container ">
+    <div className="full-container networks">
       <div className="text">on this networks</div>
-      <div className="networks-list">
-        {networks.map((network, i) => {
-          return <Network key={i} classes={getClasses(i)} network={network} />;
-        })}
+      <div className="networks-wrapper">
+        <div className="half-container" style={{ position: 'relative' }}>
+          <NetworkInfo onHide={() => dispatch(setNetwork(false))} networksRef={networksRef} />
+        </div>
+        <div className="container">
+          <div className="networks-list" ref={networksRef}>
+            {networks.map((network, i) => {
+              return (
+                <Network
+                  key={i}
+                  classes={getClasses(i)}
+                  network={network}
+                  onClick={() => {
+                    networksRef?.current?.scrollIntoView();
+                    dispatch(setNetwork(network));
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

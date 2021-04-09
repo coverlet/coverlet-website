@@ -164,7 +164,9 @@ export const Carousel = (): ReactElement => {
           )}
         </div>
         <div className="slide-bottom">
-          <Button appearance="ghost">Stake with us</Button>
+          <Button appearance="ghost" className="stake-with-us">
+            STAKE WITH US
+          </Button>
         </div>
       </div>
     </div>

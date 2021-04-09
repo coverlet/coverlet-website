@@ -1,0 +1,29 @@
+.network-info {
+  height: 10px;
+  position: absolute;
+  z-index: 4;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  margin: -24px 0 -24px -24px;
+
+  .info-content {
+    margin: 24px 0 24px 24px;
+    height: 10px;
+    position: absolute;
+    background-color: #fff;
+    pointer-events: all;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    box-shadow: 0px 0px 28px 0px rgb(0 0 0 / 16%);
+    transform: translateX(102%);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &.show {
+      transform: translateX(0%);
+    }
+  }
+}

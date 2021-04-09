@@ -1,23 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IApp, IRedux } from './types';
+import { IRedux, INetwork, IApp } from './types';
 
 const initialState: IApp = {
-  count: 0,
+  network: null,
 };
 
 const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setCount: (state, action) => ({
+    setNetwork: (state, action) => ({
       ...state,
-      count: action.payload,
+      network: action.payload,
     }),
   },
 });
 
-export const { setCount } = appSlice.actions;
+export const { setNetwork } = appSlice.actions;
 
-export const selectCount = (state: IRedux): number => state.app.count;
+export const selectNetwork = (state: IRedux): INetwork => state.app.network;
 
 export default appSlice.reducer;

@@ -3,7 +3,7 @@ export interface IRedux {
 }
 
 export interface IApp {
-  count: number;
+  network?: INetwork;
 }
 
 export interface INetwork {
@@ -11,4 +11,5 @@ export interface INetwork {
   icon: string;
   mainnet: boolean;
   live: boolean;
+  id: string;
 }
