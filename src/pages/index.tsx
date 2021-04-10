@@ -1,9 +1,4 @@
-import React, { ReactElement, useContext, useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCount, setCount } from '../redux/app';
-import { Button } from 'rsuite';
-import { Slide } from '../components/slide/slide';
-import { SmoothScrollContext } from '../utils/scroll-context';
+import React, { ReactElement } from 'react';
 import { Services } from '../components/services/services';
 import { Carousel } from '../components/carousel/carousel';
 import { Networks } from '../components/networks/networks';
@@ -11,7 +6,7 @@ import { Networks } from '../components/networks/networks';
 import './index.module.scss';
 import { PassingText } from '../components/passing-text/passing-text';
 
-const HomePage = () => {
+const HomePage = (): ReactElement => {
   return (
     <div>
       <Carousel />
