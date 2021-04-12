@@ -15,7 +15,7 @@ export const Header = (): ReactElement => {
         <Button appearance="subtle">Projects</Button>
         <Button appearance="subtle">About us</Button>
       </div>
-      <div>
+      <div className="stake-container">
         <Button appearance="primary" className="stake-with-us">
           STAKE WITH US
         </Button>

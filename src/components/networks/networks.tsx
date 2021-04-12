@@ -19,6 +19,14 @@ const getClasses = (i: number) => {
   return classes;
 };
 
+const scrollIntoView = (networksRef) => {
+  const top = networksRef?.current?.getBoundingClientRect()?.top || 0;
+
+  if (top < 0) {
+    window.scrollTo(0, window.pageYOffset + top - 20);
+  }
+};
+
 export const Networks = (): ReactElement => {
   const networksRef = useRef(null);
   const dispatch = useDispatch();
@@ -39,7 +47,7 @@ export const Networks = (): ReactElement => {
                   classes={getClasses(i)}
                   network={network}
                   onClick={() => {
-                    networksRef?.current?.scrollIntoView();
+                    scrollIntoView(networksRef);
                     dispatch(setNetwork(network));
                   }}
                 />

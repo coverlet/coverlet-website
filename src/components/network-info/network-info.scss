@@ -21,9 +21,85 @@
     box-shadow: 0px 0px 28px 0px rgb(0 0 0 / 16%);
     transform: translateX(102%);
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 64px 92px;
 
     &.show {
       transform: translateX(0%);
+    }
+  }
+
+  .top-section {
+    display: flex;
+    flex-direction: row;
+
+    .back {
+      display: flex;
+      justify-content: center;
+      width: 40px;
+      margin-left: -40px;
+      margin-right: 0px;
+      cursor: pointer;
+      svg {
+        width: 32px;
+        fill: #999;
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(-40%);
+          width: 32px;
+          fill: #000;
+        }
+      }
+    }
+
+    .name {
+      text-transform: uppercase;
+      font-size: 2em;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+
+    .left {
+      flex: 1;
+    }
+
+    .right {
+      width: 20%;
+      font-size: 0.7em;
+      button {
+        font-weight: bold;
+        padding: 12px 48px;
+      }
+    }
+
+    .numbers {
+      display: flex;
+      flex-direction: row;
+
+      .number {
+        min-width: 10em;
+        .info {
+          font-size: 0.8em;
+          color: #999;
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  .more-info {
+    .more-info-title {
+      margin-top: 24px;
+      font-size: 1.2em;
+    }
+
+    .more-info-text {
     }
   }
 }
