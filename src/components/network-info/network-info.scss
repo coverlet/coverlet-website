@@ -22,6 +22,7 @@
     transform: translateX(102%);
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding: 64px 92px;
+    font-size: 1rem;
 
     &.show {
       transform: translateX(0%);
@@ -71,7 +72,7 @@
 
     .right {
       width: 20%;
-      font-size: 0.7em;
+      font-size: 0.8rem;
       button {
         font-weight: bold;
         padding: 12px 48px;
@@ -85,9 +86,38 @@
       .number {
         min-width: 10em;
         .info {
-          font-size: 0.8em;
+          font-size: 0.8rem;
           color: #999;
-          padding-bottom: 12px;
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  .delegation {
+    margin-top: 24px;
+
+    .delegation-top {
+      font-weight: bold;
+    }
+
+    .delegation-bottom {
+      display: flex;
+      flex-direction: row;
+      height: 2.2rem;
+
+      .address-box {
+        color: #666;
+        background-color: #eee;
+        line-height: 2.2rem;
+        min-width: 50%;
+        padding: 0 16px;
+      }
+
+      .delegation-button {
+        button {
+          font-size: 0.8rem;
+          font-weight: bold;
         }
       }
     }
@@ -96,7 +126,7 @@
   .more-info {
     .more-info-title {
       margin-top: 24px;
-      font-size: 1.2em;
+      // font-size: 1.2em;
     }
 
     .more-info-text {

@@ -175,7 +175,7 @@ export const Services = (): ReactElement => {
       </div>
       <div className="egde-card last full-container">
         <div className="edge-text">
-          <div className="title">Thats all floks!</div>
+          <div className="title">Stake with us!</div>
         </div>
       </div>
     </div>

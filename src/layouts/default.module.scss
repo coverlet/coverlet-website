@@ -56,6 +56,32 @@
       margin-right: 0;
     }
   }
+
+  .right-half-container {
+    width: auto;
+    margin-right: calc(50% - 950px);
+    // margin-left: auto;
+    margin-left: 0;
+
+    @media screen and (max-width: #{$bp-xlarge}) {
+      width: auto;
+      margin-left: 0;
+      margin-right: 64px;
+    }
+
+    @media screen and (max-width: #{$bp-large}) {
+      width: auto;
+      margin-left: 0;
+      margin-right: 32px;
+    }
+
+    @media screen and (max-width: #{$bp-medium}) {
+      width: auto;
+      margin-left: 0;
+      margin-right: 16px;
+    }
+  }
+
   .full-container {
     width: 100%;
   }

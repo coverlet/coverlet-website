@@ -3,6 +3,7 @@ import { IRedux, INetwork, IApp } from './types';
 
 const initialState: IApp = {
   network: null,
+  networks: [],
 };
 
 const appSlice = createSlice({
@@ -13,11 +14,18 @@ const appSlice = createSlice({
       ...state,
       network: action.payload,
     }),
+    setNetworks: (state, action) => ({
+      ...state,
+      networks: action.payload,
+    }),
   },
 });
 
-export const { setNetwork } = appSlice.actions;
+export const { setNetwork, setNetworks } = appSlice.actions;
 
 export const selectNetwork = (state: IRedux): INetwork => state.app.network;
+export const selectNetworks = (state: IRedux): INetwork[] => state.app.networks;
+export const getNetworkData = (networkName: string) => (state: IRedux): INetwork =>
+  state.app.networks.find((n) => n.name == networkName);
 
 export default appSlice.reducer;

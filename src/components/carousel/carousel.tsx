@@ -1,4 +1,5 @@
 import React, { PureComponent, ReactElement, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
   Area,
   AreaChart,
@@ -11,6 +12,7 @@ import {
   YAxis,
 } from 'recharts';
 import Button from 'rsuite/lib/Button';
+import { getNetworkData } from '../../redux/app';
 import { Slide } from '../slide/slide';
 
 import './carousel.scss';
@@ -30,24 +32,11 @@ const slides = [
   },
 ];
 
-const data = [
-  { date: '2021-03-25', val: 13.5 },
-  { date: '2021-03-26', val: 14.19 },
-  { date: '2021-03-27', val: 15.8 },
-  { date: '2021-03-28', val: 17.08 },
-  { date: '2021-03-29', val: 18.76 },
-  { date: '2021-03-30', val: 20.41 },
-  { date: '2021-03-31', val: 19.02 },
-  { date: '2021-04-01', val: 19.07 },
-  { date: '2021-04-02', val: 19.55 },
-  { date: '2021-04-03', val: 22.3 },
-  { date: '2021-04-04', val: 24.8 },
-  { date: '2021-04-05', val: 23.6 },
-];
-
 export const Carousel = (): ReactElement => {
   const [browser, setBrowser] = useState(false);
   const [tooltip, showTooltip] = useState(false);
+
+  const solanaData = useSelector(getNetworkData('Solana'));
 
   useEffect(() => {
     setTimeout(() => {
@@ -68,7 +57,7 @@ export const Carousel = (): ReactElement => {
               <AreaChart
                 // width={600}
                 // height={500}
-                data={data}
+                data={solanaData.history}
                 margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
               >
                 <defs>
@@ -124,7 +113,7 @@ export const Carousel = (): ReactElement => {
                   // @ts-ignore
                   label={(props) => {
                     const { x, y, stroke, value, index } = props;
-                    if (index < data.length - 1) {
+                    if (index < solanaData.history.length - 1) {
                       return (
                         <g>
                           <text

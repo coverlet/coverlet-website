@@ -1,11 +1,11 @@
 import { ReactElement, useRef, useEffect, useState } from 'react';
 import { Network } from '../network/network';
 import { NetworkInfo } from '../network-info/network-info';
-import { networks } from '../../core/networks';
-import { useDispatch } from 'react-redux';
-import { setNetwork } from '../../redux/app';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNetworks, setNetwork } from '../../redux/app';
 
 import './networks.scss';
+import { INetwork } from '../../redux/types';
 
 const getClasses = (i: number) => {
   let classes = '';
@@ -31,6 +31,8 @@ export const Networks = (): ReactElement => {
   const networksRef = useRef(null);
   const dispatch = useDispatch();
 
+  const networks: INetwork[] = useSelector(selectNetworks);
+
   return (
     <div className="full-container networks">
       <div className="text">on this networks</div>
@@ -47,8 +49,10 @@ export const Networks = (): ReactElement => {
                   classes={getClasses(i)}
                   network={network}
                   onClick={() => {
-                    scrollIntoView(networksRef);
-                    dispatch(setNetwork(network));
+                    if (network.mainnet) {
+                      scrollIntoView(networksRef);
+                      dispatch(setNetwork(network));
+                    }
                   }}
                 />
               );

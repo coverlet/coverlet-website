@@ -12,6 +12,7 @@
     "canvasjs": "^1.8.3",
     "gsap": "npm:@gsap/shockingly@^3.6.1",
     "locomotive-scroll": "^4.1.1",
+    "moment": "^2.29.1",
     "next": "10.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-redux-wrapper": "^6.0.2",
@@ -50,7 +51,7 @@
     "lint-staged": "^10.5.3",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.3",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
   }
 }
