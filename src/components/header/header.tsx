@@ -11,9 +11,36 @@ export const Header = (): ReactElement => {
         <img src="logo.png" alt="Coverlet" />
       </div>
       <div className="nav">
-        <Button appearance="subtle">Networks</Button>
-        <Button appearance="subtle">Projects</Button>
-        <Button appearance="subtle">About us</Button>
+        <Button
+          appearance="subtle"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#networks';
+            history.replaceState(null, null, url);
+          }}
+        >
+          Networks
+        </Button>
+        <Button
+          appearance="subtle"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#under';
+            history.replaceState(null, null, url);
+          }}
+        >
+          Projects
+        </Button>
+        <Button
+          appearance="subtle"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#under';
+            history.replaceState(null, null, url);
+          }}
+        >
+          About us
+        </Button>
       </div>
       <div className="stake-container">
         <Button appearance="primary" className="stake-with-us">

@@ -1,0 +1,31 @@
+@import '../slide.scss';
+
+.slide-launch {
+  padding-top: 10vh;
+
+  .slide-top {
+    img {
+      width: 50vh;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5vh;
+    // justify-content: center;
+
+    .top-text {
+      font-size: 2.4em;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .more-info {
+      margin-top: 2vh;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}

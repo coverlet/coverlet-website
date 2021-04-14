@@ -1,0 +1,31 @@
+.slide {
+  padding-top: 20vh;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  .slide-bottom {
+    align-items: center;
+    // display: flex;
+    flex-direction: column;
+    margin-bottom: 12vh;
+  }
+
+  button.rs-btn {
+    &.slide-cta {
+      padding: 12px 48px;
+      font-weight: bold;
+      font-size: 0.7em;
+
+      &:hover {
+        color: #000 !important;
+        background-color: #fdd03b;
+        border-color: #fdd03b !important;
+      }
+    }
+  }
+}

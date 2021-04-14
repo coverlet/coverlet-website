@@ -23,37 +23,46 @@
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding: 64px 92px;
     font-size: 1rem;
+    overflow-y: scroll;
 
     &.show {
       transform: translateX(0%);
     }
   }
 
+  .back {
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    left: 0;
+
+    .back-inner {
+      background-color: #000;
+      width: 96px;
+      border-radius: 50%;
+      height: 96px;
+      margin-left: -48px;
+    }
+
+    svg {
+      width: 32px;
+      fill: #999;
+      margin-left: 52px;
+      margin-top: 32px;
+      transition: all 0.5s ease;
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(10%);
+        width: 32px;
+        fill: #ccc;
+      }
+    }
+  }
   .top-section {
     display: flex;
     flex-direction: row;
-
-    .back {
-      display: flex;
-      justify-content: center;
-      width: 40px;
-      margin-left: -40px;
-      margin-right: 0px;
-      cursor: pointer;
-      svg {
-        width: 32px;
-        fill: #999;
-        transition: all 0.5s ease;
-      }
-
-      &:hover {
-        svg {
-          transform: translateX(-40%);
-          width: 32px;
-          fill: #000;
-        }
-      }
-    }
 
     .name {
       text-transform: uppercase;
@@ -92,6 +101,10 @@
         }
       }
     }
+
+    button.stake-with-us {
+      text-transform: uppercase;
+    }
   }
 
   .delegation {
@@ -99,6 +112,7 @@
 
     .delegation-top {
       font-weight: bold;
+      font-size: 1.2em;
     }
 
     .delegation-bottom {
@@ -126,6 +140,8 @@
   .more-info {
     .more-info-title {
       margin-top: 24px;
+      font-weight: bold;
+      font-size: 1.2em;
       // font-size: 1.2em;
     }
 

@@ -66,19 +66,19 @@
     @media screen and (max-width: #{$bp-xlarge}) {
       width: auto;
       margin-left: 0;
-      margin-right: 64px;
+      margin-right: 127px;
     }
 
     @media screen and (max-width: #{$bp-large}) {
       width: auto;
       margin-left: 0;
-      margin-right: 32px;
+      margin-right: 64px;
     }
 
     @media screen and (max-width: #{$bp-medium}) {
       width: auto;
       margin-left: 0;
-      margin-right: 16px;
+      margin-right: 32px;
     }
   }
 

@@ -21,4 +21,5 @@ export interface INetwork {
   totalStake?: number;
   commission?: number;
   price?: number;
+  stakeLink?: string;
 }

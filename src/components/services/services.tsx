@@ -144,28 +144,19 @@ export const Services = (): ReactElement => {
             <div className="card full">
               <div className="content">
                 <div className="title-content">Availability</div>
-                <div>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industrys standard dummy text ever since the 1500s,
-                </div>
+                <div>High uptime</div>
               </div>
             </div>
             <div className="card full">
               <div className="content">
-                <div className="title-content">Security</div>
-                <div>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industrys standard dummy text ever since the 1500s,
-                </div>
+                <div className="title-content">High Security</div>
+                <div>No compromises here</div>
               </div>
             </div>
             <div className="card full">
               <div className="content">
                 <div className="title-content">Realibility</div>
-                <div>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industrys standard dummy text ever since the 1500s,
-                </div>
+                <div>Monitoring and redundancy</div>
               </div>
             </div>
           </div>
@@ -175,7 +166,7 @@ export const Services = (): ReactElement => {
       </div>
       <div className="egde-card last full-container">
         <div className="edge-text">
-          <div className="title">Stake with us!</div>
+          <div className="title">More info coming soon</div>
         </div>
       </div>
     </div>

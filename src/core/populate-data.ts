@@ -185,7 +185,7 @@ const temp = [
 const processCryptoData = (data) => {
   return data.map((d) => {
     return {
-      date: moment(d.time).format('YYYY-MM-DD'),
+      date: moment.unix(d.time).format('YYYY-MM-DD'),
       val: d.close,
     };
   });
@@ -195,6 +195,7 @@ export const getData = async () => {
   for (let i = 0; i < networks.length; i++) {
     if (networks[i].hasPrice && networks[i].symbol) {
       const data = await getPrices(networks[i].symbol);
+      // const data = { Data: { Data: temp } };
       networks[i].history = processCryptoData(data.Data.Data);
       networks[i].price = networks[i].history[networks[i].history.length - 1].val;
       // console.log(networks[i].history);

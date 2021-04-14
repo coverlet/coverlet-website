@@ -17,45 +17,4 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-
-  .slide-top {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20vh;
-  }
-  .slide-bottom {
-    align-items: center;
-    // display: flex;
-    flex-direction: column;
-    margin-bottom: 12vh;
-  }
-  .title {
-    font-size: 4em;
-    font-weight: bold;
-  }
-  .subtitle {
-    font-size: 1em;
-  }
-  .content {
-  }
-
-  .main-bg {
-    height: 100vh;
-    width: 100%;
-  }
-
-  button.rs-btn {
-    &.stake-with-us {
-      padding: 12px 48px;
-      font-weight: bold;
-      font-size: 0.7em;
-
-      &:hover {
-        color: #000 !important;
-        background-color: #fdd03b;
-        border-color: #fdd03b !important;
-      }
-    }
-  }
 }

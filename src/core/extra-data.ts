@@ -30,5 +30,6 @@ export const extraData = {
     delegators: 1,
     totalStake: 8600,
     commission: 5,
+    stakeLink: 'https://wallet.keplr.app/#/dashboard',
   },
 };

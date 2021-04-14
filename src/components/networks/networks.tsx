@@ -40,7 +40,7 @@ export const Networks = (): ReactElement => {
         <div className="half-container" style={{ position: 'relative' }}>
           <NetworkInfo onHide={() => dispatch(setNetwork(false))} networksRef={networksRef} />
         </div>
-        <div className="container">
+        <div className="container" id="networks">
           <div className="networks-list" ref={networksRef}>
             {networks.map((network, i) => {
               return (

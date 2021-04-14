@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement, useEffect, useRef } from 'react';
 import { Services } from '../components/services/services';
 import { Carousel } from '../components/carousel/carousel';
 import { Networks } from '../components/networks/networks';
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { setNetworks } from '../redux/app';
 
 import './index.module.scss';
+
 const HomePage = ({ networks }): ReactElement => {
   const dispatch = useDispatch();
 
@@ -22,8 +23,9 @@ const HomePage = ({ networks }): ReactElement => {
       <PassingText />
       <Networks />
       <Services />
-
-      <div className="container ">More info here really really soon!</div>
+      <div id="under" style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center' }}>
+        Under construction
+      </div>
     </div>
   );
 };
