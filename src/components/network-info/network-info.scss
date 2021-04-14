@@ -28,38 +28,39 @@
     &.show {
       transform: translateX(0%);
     }
-  }
+    .back {
+      position: sticky;
+      cursor: pointer;
+      top: 40%;
+      left: 0;
+      margin-left: -88px;
 
-  .back {
-    position: absolute;
-    cursor: pointer;
-    top: 40%;
-    left: 0;
+      .back-inner {
+        background-color: #000;
+        width: 96px;
+        border-radius: 50%;
+        height: 96px;
+        margin-left: -48px;
+      }
 
-    .back-inner {
-      background-color: #000;
-      width: 96px;
-      border-radius: 50%;
-      height: 96px;
-      margin-left: -48px;
-    }
-
-    svg {
-      width: 32px;
-      fill: #999;
-      margin-left: 52px;
-      margin-top: 32px;
-      transition: all 0.5s ease;
-    }
-
-    &:hover {
       svg {
-        transform: translateX(10%);
         width: 32px;
-        fill: #ccc;
+        fill: #999;
+        margin-left: 52px;
+        margin-top: 32px;
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(10%);
+          width: 32px;
+          fill: #ccc;
+        }
       }
     }
   }
+
   .top-section {
     display: flex;
     flex-direction: row;

@@ -22,20 +22,20 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
   return (
     <div className="network-info" style={{ height: `${height + 48}px` }}>
       <div className={`info-content ${network && 'show'}`} style={{ height: `${height}px` }}>
-        <div className="right-half-container">
-          <div className="back" onClick={onHide} role="button">
-            <div className="back-inner">
-              <svg version="1.1" x="0px" y="0px" viewBox="0 0 477.175 477.175">
-                <g>
-                  <path
-                    d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+        <div className="back" onClick={onHide} role="button">
+          <div className="back-inner">
+            <svg version="1.1" x="0px" y="0px" viewBox="0 0 477.175 477.175">
+              <g>
+                <path
+                  d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
 		L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
 		c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"
-                  />
-                </g>
-              </svg>
-            </div>
+                />
+              </g>
+            </svg>
           </div>
+        </div>
+        <div className="right-half-container">
           <div className="top-section">
             <div className="name">{network?.name}</div>
           </div>

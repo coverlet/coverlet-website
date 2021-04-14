@@ -43,7 +43,15 @@ export const Header = (): ReactElement => {
         </Button>
       </div>
       <div className="stake-container">
-        <Button appearance="primary" className="stake-with-us">
+        <Button
+          appearance="primary"
+          className="stake-with-us"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#networks';
+            history.replaceState(null, null, url);
+          }}
+        >
           STAKE WITH US
         </Button>
       </div>
