@@ -155,7 +155,7 @@ export const Services = (): ReactElement => {
             </div>
             <div className="card full">
               <div className="content">
-                <div className="title-content">Realibility</div>
+                <div className="title-content">Reliability</div>
                 <div>Monitoring and redundancy</div>
               </div>
             </div>

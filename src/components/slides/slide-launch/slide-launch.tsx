@@ -27,7 +27,7 @@ export const SlideLaunch = (): ReactElement => {
       <div className="slide-bottom">
         <Button
           appearance="ghost"
-          className="slide-cta"
+          className="slide-cta button-large"
           onClick={() => {
             const url = location.href;
             location.href = '#networks';

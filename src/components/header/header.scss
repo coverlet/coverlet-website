@@ -35,9 +35,22 @@
     display: flex;
     align-items: center;
     align-content: center;
+    margin-right: 48px;
 
-    button {
-      margin: 0 0.5rem;
+    a {
+      font-size: 16px;
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 24px;
+
+      &:visited {
+        color: #ddd;
+      }
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 

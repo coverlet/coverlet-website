@@ -40,23 +40,25 @@ export const Networks = (): ReactElement => {
         <div className="half-container" style={{ position: 'relative' }}>
           <NetworkInfo onHide={() => dispatch(setNetwork(false))} networksRef={networksRef} />
         </div>
-        <div className="container" id="networks">
-          <div className="networks-list" ref={networksRef}>
-            {networks.map((network, i) => {
-              return (
-                <Network
-                  key={i}
-                  classes={getClasses(i)}
-                  network={network}
-                  onClick={() => {
-                    if (network.mainnet) {
-                      scrollIntoView(networksRef);
-                      dispatch(setNetwork(network));
-                    }
-                  }}
-                />
-              );
-            })}
+        <div className="container " id="networks">
+          <div className="networks-list-helper">
+            <div className="networks-list" ref={networksRef}>
+              {networks.map((network, i) => {
+                return (
+                  <Network
+                    key={i}
+                    classes={getClasses(i)}
+                    network={network}
+                    onClick={() => {
+                      if (network.mainnet) {
+                        scrollIntoView(networksRef);
+                        dispatch(setNetwork(network));
+                      }
+                    }}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

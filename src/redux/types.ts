@@ -22,4 +22,7 @@ export interface INetwork {
   commission?: number;
   price?: number;
   stakeLink?: string;
+  website?: string;
+  websiteFriendly?: string;
+  marketcap?: number;
 }

@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Nav, Dropdown, Button } from 'rsuite';
+import Link from 'next/link';
 
 import './header.scss';
 
@@ -8,39 +9,12 @@ export const Header = (): ReactElement => {
   return (
     <div className="coverlet-header full-container">
       <div className="logo">
-        <img src="logo.png" alt="Coverlet" />
+        <img src="coverlet-logo.svg" alt="Coverlet" />
       </div>
       <div className="nav">
-        <Button
-          appearance="subtle"
-          onClick={() => {
-            const url = location.href;
-            location.href = '#networks';
-            history.replaceState(null, null, url);
-          }}
-        >
-          Networks
-        </Button>
-        <Button
-          appearance="subtle"
-          onClick={() => {
-            const url = location.href;
-            location.href = '#under';
-            history.replaceState(null, null, url);
-          }}
-        >
-          Projects
-        </Button>
-        <Button
-          appearance="subtle"
-          onClick={() => {
-            const url = location.href;
-            location.href = '#under';
-            history.replaceState(null, null, url);
-          }}
-        >
-          About us
-        </Button>
+        <Link href="#networks">Networks</Link>
+        <Link href="#under">Projects</Link>
+        <Link href="#under">About us</Link>
       </div>
       <div className="stake-container">
         <Button

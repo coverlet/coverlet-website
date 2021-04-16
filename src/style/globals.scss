@@ -24,7 +24,7 @@ html {
 }
 @media screen and (min-width: 768px) {
   html {
-    font-size: calc(16px + 6 * ((100vw - 768px) / 680));
+    font-size: calc(16px + 6 * ((100vw - 768px) / 768));
   }
 }
 @media screen and (min-width: 2120px) {
