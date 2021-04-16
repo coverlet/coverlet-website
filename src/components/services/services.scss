@@ -28,7 +28,7 @@
     }
 
     .title {
-      font-size: 3em;
+      font-size: 4rem;
       font-weight: bold;
       display: flex;
       height: 100vh;
@@ -84,7 +84,7 @@
       align-items: center;
       text-align: center;
       justify-content: center;
-      font-size: 36px;
+      font-size: 1.2rem;
       font-weight: bold;
       will-change: transform;
       position: sticky;
@@ -105,25 +105,24 @@
     }
 
     .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 1.2rem;
+      padding: 0 36px;
+      will-change: transform;
+      transform: translateZ(0);
+      line-height: 1.4;
+
       .title-content {
         font-size: 3em;
         font-weight: bold;
         margin-bottom: 24px;
       }
-
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      font-size: 1.2em;
-      padding: 0 36px;
-      line-height: 1.8;
-      will-change: transform;
-      transform: translateZ(0);
-      line-height: 1.4;
     }
   }
 
-  @media screen and (max-width: #{$bp-medium}) {
+  @media screen and (max-width: #{$bp-small}) {
     .services {
       &.container {
         margin: 0;
@@ -132,6 +131,11 @@
       .cards {
         margin-left: -100%;
         width: 100vw !important;
+
+        .content {
+          width: 100%;
+          align-items: center;
+        }
       }
 
       .serv-hero-track {
@@ -142,20 +146,6 @@
         overflow: hidden;
         width: 100%;
         opacity: 0.4;
-      }
-    }
-
-    .carousel {
-      .slide-top {
-        margin-top: 12vh !important;
-      }
-
-      .title {
-        font-size: 64px !important;
-      }
-
-      .subtitle {
-        font-size: 18px !important;
       }
     }
   }

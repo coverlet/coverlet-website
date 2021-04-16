@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import { ReactElement } from 'react';
 import './how-to-stake.scss';
 
@@ -18,7 +19,10 @@ const getHowToStake = (networkName): ReactElement => {
                 or use “STAKE REGEN” button above
               </li>
               <li>From the menu on the left, select “Regen” and click “Stake”</li>
-              <li>In the list that opened, search for Coverlet and click “Manage”</li>
+              <li>
+                In the list that opened, search for “Ozone <span role="img">🌤️🌱</span>” and click
+                “Manage”
+              </li>
               <li>
                 Select “Delegate”, then fill out the amount of REGEN that you’d like to delegate,
                 then click “Delegate” button

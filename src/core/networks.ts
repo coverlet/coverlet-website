@@ -46,7 +46,7 @@ export const networks: INetwork[] = [
     address: 'regenvaloper1273zsxhxd5dlgcr2zjf5x25275hjcp3uupmg2z',
     icon: 'regen-logo.png',
     mainnet: true,
-    live: false,
+    live: true,
     id: 'regen',
     symbol: 'REGEN',
     hasPrice: false,

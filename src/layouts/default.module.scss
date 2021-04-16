@@ -9,76 +9,56 @@
   margin-right: auto;
 
   .container {
-    width: 1900px;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
 
-    @media screen and (max-width: #{$bp-xlarge}) {
-      width: auto;
-      margin-left: 64px;
-      margin-right: 64px;
-    }
-
-    @media screen and (max-width: #{$bp-large}) {
+    @media screen and (min-width: #{$bp-small}) {
       width: auto;
       margin-left: 32px;
       margin-right: 32px;
     }
 
-    @media screen and (max-width: #{$bp-medium}) {
-      width: auto;
-      margin-left: 16px;
-      margin-right: 16px;
+    @media screen and (min-width: #{$bp-large}) {
+      width: 1856px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
   .half-container {
     width: auto;
-    margin-left: calc(50% - 950px);
-    // margin-left: auto;
+    margin-left: 16px;
     margin-right: 0;
 
-    @media screen and (max-width: #{$bp-xlarge}) {
-      width: auto;
-      margin-left: 64px;
-      margin-right: 0;
-    }
-
-    @media screen and (max-width: #{$bp-large}) {
+    @media screen and (min-width: #{$bp-small}) {
       width: auto;
       margin-left: 32px;
       margin-right: 0;
     }
 
-    @media screen and (max-width: #{$bp-medium}) {
+    @media screen and (min-width: #{$bp-large}) {
       width: auto;
-      margin-left: 16px;
+      margin-left: calc(50%-928px);
       margin-right: 0;
     }
   }
 
   .right-half-container {
     width: auto;
-    margin-right: calc(50% - 950px);
-    // margin-left: auto;
     margin-left: 0;
+    margin-right: 16px;
 
-    @media screen and (max-width: #{$bp-xlarge}) {
-      width: auto;
-      margin-left: 0;
-      margin-right: 127px;
-    }
-
-    @media screen and (max-width: #{$bp-large}) {
-      width: auto;
-      margin-left: 0;
-      margin-right: 64px;
-    }
-
-    @media screen and (max-width: #{$bp-medium}) {
+    @media screen and (min-width: #{$bp-small}) {
       width: auto;
       margin-left: 0;
       margin-right: 32px;
+    }
+
+    @media screen and (min-width: #{$bp-large}) {
+      width: auto;
+      margin-right: calc(50%-928px);
+      margin-left: 0;
     }
   }
 

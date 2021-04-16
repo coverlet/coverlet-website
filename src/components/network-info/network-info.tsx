@@ -68,7 +68,7 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                 <Button
                   appearance="primary"
                   color="blue"
-                  className="stake-with-us"
+                  className="button-large"
                   onClick={() => {
                     window.location.href = network?.stakeLink;
                   }}

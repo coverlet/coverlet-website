@@ -21,7 +21,7 @@
     box-shadow: 0px 0px 28px 0px rgb(0 0 0 / 16%);
     transform: translateX(102%);
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    padding: 64px 92px;
+    padding: 0;
     font-size: 1rem;
     overflow-y: scroll;
 
@@ -31,33 +31,38 @@
     .back {
       position: sticky;
       cursor: pointer;
-      top: 40%;
+      top: calc(50% - 3rem);
       left: 0;
-      margin-left: -88px;
+      width: 3rem;
+      margin-left: 0;
 
       .back-inner {
         background-color: #000;
-        width: 96px;
+        width: 6rem;
         border-radius: 50%;
-        height: 96px;
-        margin-left: -48px;
+        height: 6rem;
+        margin-left: -3rem;
       }
 
       svg {
-        width: 32px;
-        fill: #999;
-        margin-left: 52px;
-        margin-top: 32px;
+        width: 2.5rem;
+        fill: #ccc;
+        margin-left: 3rem;
+        margin-top: 1.8rem;
         transition: all 0.5s ease;
       }
 
       &:hover {
         svg {
           transform: translateX(10%);
-          width: 32px;
-          fill: #ccc;
+          fill: #fff;
         }
       }
+    }
+
+    .right-half-container {
+      margin-top: -6rem;
+      padding: 4rem;
     }
   }
 
@@ -67,14 +72,14 @@
 
     .name {
       text-transform: uppercase;
-      font-size: 2em;
+      font-size: 2rem;
     }
   }
 
   .content {
     display: flex;
     flex-direction: row;
-    margin-top: 24px;
+    margin-top: 1rem;
 
     .left {
       flex: 1;
@@ -82,10 +87,8 @@
 
     .right {
       width: 20%;
-      font-size: 0.8rem;
       button {
-        font-weight: bold;
-        padding: 12px 48px;
+        text-transform: uppercase;
       }
     }
 
@@ -98,7 +101,7 @@
         .info {
           font-size: 0.8rem;
           color: #999;
-          padding-bottom: 4px;
+          padding-bottom: 0.2rem;
         }
       }
     }
@@ -109,17 +112,18 @@
   }
 
   .delegation {
-    margin-top: 24px;
+    margin-top: 1rem;
 
     .delegation-top {
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
 
     .delegation-bottom {
       display: flex;
       flex-direction: row;
       height: 2.2rem;
+      margin-top: 12px;
 
       .address-box {
         color: #666;
@@ -131,7 +135,7 @@
 
       .delegation-button {
         button {
-          font-size: 0.8rem;
+          height: 2.2rem;
           font-weight: bold;
         }
       }
@@ -142,7 +146,7 @@
     .more-info-title {
       margin-top: 24px;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.2rem;
       // font-size: 1.2em;
     }
 

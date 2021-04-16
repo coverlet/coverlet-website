@@ -3,7 +3,7 @@
   margin-top: 8px;
   color: white;
   overflow: hidden;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   display: flex;
   z-index: 3;
   padding: 24px 32px;
@@ -17,11 +17,6 @@
       &.stake-with-us {
         color: #000 !important;
       }
-    }
-
-    &.stake-with-us {
-      padding: 12px 48px;
-      font-weight: bold;
     }
   }
 
@@ -42,7 +37,7 @@
     align-content: center;
 
     button {
-      margin: 0 4px;
+      margin: 0 0.5rem;
     }
   }
 

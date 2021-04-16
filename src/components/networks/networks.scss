@@ -3,25 +3,18 @@
   flex-direction: column;
   background-color: #f5f6fa;
 
-  h1 {
-    padding: 2em 0;
-    color: #036dca;
-  }
-
   .text {
-    font-size: 3em;
+    font-size: 4rem;
     font-weight: bold;
     text-align: center;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 3.4rem;
+    margin-bottom: 1rem;
   }
 
   .networks-list {
     display: flex;
     flex-wrap: wrap;
     margin: -8px;
-    // grid-gap: 50px;
-    // grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .networks-wrapper {

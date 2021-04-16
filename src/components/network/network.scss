@@ -6,7 +6,7 @@ $dark-color: #f9fafc;
 // $bg-light-color: $light-color;
 // $bg-dark-color: $dark-color;
 $bg-light-color: #fff;
-$bg-dark-color: #f5f5f5;
+$bg-dark-color: #f5f6fa;
 
 .network {
   position: relative;
@@ -47,7 +47,7 @@ $bg-dark-color: #f5f5f5;
     }
   }
 
-  @media screen and (max-width: #{$bp-large}) {
+  @media screen and (max-width: #{$bp-medium}) {
     width: 33%;
 
     &:nth-child(even) {
@@ -115,7 +115,7 @@ $bg-dark-color: #f5f5f5;
     }
 
     button.rs-btn {
-      font-size: 0.8em;
+      font-size: 0.8rem;
     }
   }
 
@@ -132,7 +132,7 @@ $bg-dark-color: #f5f5f5;
     background-color: #ffffff;
     will-change: transform;
     margin: 8px;
-    padding: 2em;
+    padding: 2rem;
     top: 0;
     left: 0;
     right: 0;
@@ -159,9 +159,14 @@ $bg-dark-color: #f5f5f5;
     }
 
     .chart {
+      cursor: pointer;
       opacity: 0;
       transform: translateY(0) scaleY(20%);
       transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.4s ease 0.2s;
+
+      svg {
+        cursor: pointer;
+      }
     }
 
     &:hover:not(.network-selected) {
@@ -174,7 +179,7 @@ $bg-dark-color: #f5f5f5;
       }
 
       .bottom-part {
-        transform: translateY(20px);
+        transform: translateY(10px);
       }
 
       .rs-ripple.reveal-ripple {
@@ -185,23 +190,23 @@ $bg-dark-color: #f5f5f5;
 
     .name {
       margin-top: 12px;
-      font-size: 1.2em;
+      font-size: 1.1rem;
       text-transform: uppercase;
     }
 
     .logo {
       img {
-        width: 2em;
-        height: 2em;
+        width: 2rem;
+        height: 2rem;
       }
     }
 
     .status {
-      margin-top: 0.2em;
+      margin-top: 0.2rem;
       display: flex;
 
       .status-text {
-        font-size: 0.9em;
+        font-size: 0.8rem;
       }
     }
 
@@ -211,7 +216,7 @@ $bg-dark-color: #f5f5f5;
   }
 
   .led-green {
-    margin-top: 0.7em;
+    margin-top: 0.5rem;
     margin-left: -12px;
     width: 6px;
     height: 6px;
@@ -225,7 +230,7 @@ $bg-dark-color: #f5f5f5;
   }
 
   .led-yellow {
-    margin-top: 0.7em;
+    margin-top: 0.5rem;
     margin-left: -12px;
     width: 6px;
     height: 6px;
@@ -254,7 +259,7 @@ $bg-dark-color: #f5f5f5;
     position: relative;
     display: flex;
     justify-content: flex-end;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transform: translateY(0);
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.4s ease 0.2s;
   }
