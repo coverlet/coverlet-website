@@ -1,11 +1,18 @@
 @import '../slide.scss';
+@import '../../../style/variables.scss';
 
 .slide-launch {
   padding-top: 10vh;
 
   .slide-top {
     img {
-      width: 30rem;
+      width: 28rem;
+    }
+
+    @media screen and (max-width: #{$bp-small}) {
+      img {
+        width: 22rem;
+      }
     }
   }
 
