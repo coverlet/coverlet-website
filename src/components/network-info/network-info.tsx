@@ -17,7 +17,7 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
     const dim = networksRef?.current?.getBoundingClientRect();
 
     if (dim) {
-      setHeight(dim.height);
+      setHeight(dim.height > 700 ? dim.height : 700);
     }
 
     if (network) {
@@ -117,7 +117,7 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                         // width={600}
                         // height={500}
                         data={network.history}
-                        margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+                        margin={{ top: 5, right: 4, left: 4, bottom: 5 }}
                       >
                         <defs>
                           <linearGradient id="networkGrad" x1="0" y1="0" x2="0" y2="1">
@@ -144,15 +144,24 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                           }}
                           label={(props) => {
                             const { x, y, stroke, value, index } = props;
+                            const width = 12 * (value.toString().length || 3);
+                            const delta = y > 100 ? -32 : 12;
                             if (index < network.history.length - 1) {
                               return null;
                             }
                             return (
                               <g>
-                                <rect x={x - 74} y={y + 12} width="88" height="22" fill="#0b7f16" />
+                                <rect
+                                  x={x - width + 4}
+                                  y={y + delta}
+                                  width={width}
+                                  height="22"
+                                  fill="#0b7f1666"
+                                />
+                                <circle cx={x} cy={y} r="2" stroke="none" fill="#0b7f1666" />
                                 <text
-                                  x={x - 40}
-                                  y={y + 40}
+                                  x={x - width / 2 + 4}
+                                  y={y + 28 + delta}
                                   dy={-12}
                                   fill="#fff"
                                   fontWeight="bold"
@@ -173,7 +182,7 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                   </div>
                 )}
 
-                <div className="info-title">Key facts and resources</div>
+                <div className="info-title">Key facts</div>
                 <div className="numbers">
                   {network?.marketcap && (
                     <div className="number">
