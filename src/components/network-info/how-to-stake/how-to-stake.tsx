@@ -16,7 +16,7 @@ const getHowToStake = (networkName): ReactElement => {
                 <a href="https://wallet.keplr.app/#/dashboard">
                   https://wallet.keplr.app/#/dashboard
                 </a>{' '}
-                or use “STAKE REGEN” button above
+                or use “STAKE REGEN” button below
               </li>
               <li>From the menu on the left, select “Regen” and click “Stake”</li>
               <li>

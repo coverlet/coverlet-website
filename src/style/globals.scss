@@ -37,6 +37,14 @@ body {
   background-color: #f5f6fa !important;
   color: #000 !important;
   font-size: unset !important;
+
+  a {
+    color: #003c8b;
+
+    &:hover {
+      color: #0147a3;
+    }
+  }
 }
 
 .small {

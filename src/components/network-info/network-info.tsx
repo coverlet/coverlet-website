@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectNetwork } from '../../redux/app';
 import './network-info.scss';
@@ -10,29 +10,44 @@ import { Area, AreaChart, ResponsiveContainer, YAxis } from 'recharts';
 
 export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
   const [height, setHeight] = useState(10);
+  const elem = useRef(null);
   const [showChart, setShowChart] = useState(false);
+  const [showBack, setShowBack] = useState(false);
   const network: INetwork = useSelector(selectNetwork);
 
   useEffect(() => {
-    const dim = networksRef?.current?.getBoundingClientRect();
+    const dimNetworks = networksRef?.current?.getBoundingClientRect();
+    const dim = elem?.current?.getBoundingClientRect();
 
     if (dim) {
-      setHeight(dim.height > 700 ? dim.height : 700);
+      setHeight(dim.height > dimNetworks ? dim.height : dimNetworks.height);
     }
 
     if (network) {
       setTimeout(() => {
         setShowChart(true);
+        setShowBack(true);
       }, 500);
     } else {
       setShowChart(false);
+      setShowBack(false);
     }
   }, [network, networksRef]);
 
   return (
-    <div className="network-info" style={{ height: `${height + 48}px` }}>
-      <div className={`info-content ${network && 'show'}`} style={{ height: `${height}px` }}>
-        <div className="back" onClick={onHide} role="button">
+    <div
+      className={`network-info ${!showBack && 'no-overflow'}`}
+      style={{ height: `${height + 48}px` }}
+    >
+      <div ref={elem} className={`info-content ${network && 'show'}`}>
+        <div
+          className="back"
+          onClick={() => {
+            setShowBack(false);
+            onHide();
+          }}
+          role="button"
+        >
           <div className="back-inner">
             <svg version="1.1" x="0px" y="0px" viewBox="0 0 477.175 477.175">
               <g>
@@ -45,7 +60,7 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
             </svg>
           </div>
         </div>
-        <div className="right-half-container">
+        <div className="right-half-container" style={{ minHeight: `${height}px` }}>
           <div className="content">
             <div className="left">
               <div className="top-section">
@@ -92,21 +107,6 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                     </Button>
                   </div>
                 </div>
-              </div>
-
-              <div className="stake-button">
-                {network?.stakeLink && (
-                  <Button
-                    appearance="primary"
-                    color="blue"
-                    className="button-large"
-                    onClick={() => {
-                      window.location.href = network?.stakeLink;
-                    }}
-                  >
-                    STAKE {network?.name}
-                  </Button>
-                )}
               </div>
 
               <div className="facts">
@@ -225,6 +225,20 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
                 <div className="more-info-text">
                   <HowToStake networkName={network?.name} />
                 </div>
+              </div>
+              <div className="stake-button">
+                {network?.stakeLink && (
+                  <Button
+                    appearance="primary"
+                    color="blue"
+                    className="button-large"
+                    onClick={() => {
+                      window.location.href = network?.stakeLink;
+                    }}
+                  >
+                    STAKE {network?.name}
+                  </Button>
+                )}
               </div>
             </div>
           </div>

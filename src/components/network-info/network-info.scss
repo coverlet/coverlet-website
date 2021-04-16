@@ -1,17 +1,28 @@
+@import '../../style/variables.scss';
+
 .network-info {
-  height: 10px;
+  // height: 10px;
   position: absolute;
   z-index: 4;
   top: 0px;
   right: 0px;
   left: 0px;
-  overflow: hidden;
   pointer-events: none;
   margin: -24px 0 -24px -24px;
 
+  &.no-overflow {
+    overflow: hidden;
+
+    .info-content {
+      .back {
+        opacity: 0;
+      }
+    }
+  }
+
   .info-content {
     margin: 24px 0 24px 24px;
-    height: 10px;
+    // min-height: 100%;
     position: absolute;
     background-color: #fff;
     pointer-events: all;
@@ -22,9 +33,14 @@
     transform: translateX(102%);
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding: 0;
-    font-size: 1rem;
-    overflow-y: scroll;
+    font-size: 0.9rem;
+    // overflow-y: scroll;
     will-change: transform;
+
+    .right-half-container {
+      min-height: 100%;
+      display: flex;
+    }
 
     &.show {
       transform: translateX(0%);
@@ -32,10 +48,16 @@
     .back {
       position: sticky;
       cursor: pointer;
-      top: calc(50% - 3rem);
+      top: calc(50% - 200px);
       left: 0;
       width: 3rem;
       margin-left: 0;
+      opacity: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      height: 400px;
+      transition: opacity 0.5s ease;
 
       .back-inner {
         background-color: #000;
@@ -62,14 +84,14 @@
     }
 
     .right-half-container {
-      margin-top: -6rem;
+      margin-top: -400px;
       padding: 4rem;
     }
   }
 
   .content {
     display: flex;
-    flex-direction: row;
+    flex: 1;
     overflow-x: hidden;
     font-size: 16px;
 
@@ -84,8 +106,34 @@
     .right {
       width: 50%;
       padding-left: 32px;
+      border-left: 1px solid #ddd;
       button {
         text-transform: uppercase;
+      }
+    }
+
+    @media screen and (max-width: #{$bp-medium}) {
+      flex-direction: column;
+
+      .left {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        padding-right: 0;
+      }
+
+      .right {
+        width: 100%;
+        padding-left: 0;
+        border-left: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        button {
+          text-transform: uppercase;
+        }
       }
     }
 
@@ -167,7 +215,6 @@
         flex-direction: row;
         height: 44px;
         margin-top: 12px;
-        background-color: #eee;
 
         .address-box {
           color: #666;
@@ -176,7 +223,6 @@
           height: 44px;
           min-width: 50%;
           padding: 0 16px;
-          flex: 1;
         }
 
         .delegation-button {
