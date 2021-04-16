@@ -36,6 +36,11 @@
       align-items: center;
       color: #fff;
       mix-blend-mode: difference;
+      text-align: center;
+
+      @media screen and (max-width: #{$bp-small}) {
+        font-size: 3rem;
+      }
     }
 
     .edge-text {
@@ -135,6 +140,11 @@
         .content {
           width: 100%;
           align-items: center;
+
+          .title-content {
+            font-size: 2em;
+            text-align: center;
+          }
         }
       }
 
