@@ -2,11 +2,11 @@
 @import '../../../style/variables.scss';
 
 .slide-launch {
-  padding-top: 10vh;
+  padding-top: 13vh;
 
   .slide-top {
     img {
-      width: 28rem;
+      width: 23rem;
     }
 
     @media screen and (max-width: #{$bp-small}) {
@@ -24,15 +24,15 @@
     // justify-content: center;
 
     .top-text {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: bold;
       line-height: 1.2;
     }
 
     .more-info {
-      margin-top: 2vh;
-      font-size: 1.2rem;
-      font-weight: bold;
+      margin-top: 4vh;
+      font-size: 1rem;
+      font-weight: normal;
     }
   }
 }
