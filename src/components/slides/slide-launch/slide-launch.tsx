@@ -19,25 +19,25 @@ export const SlideLaunch = (): ReactElement => {
           April 15, 2021
         </div>
         <div className="more-info">
-          Blockchain for regenerative agriculture
-          <br />
-          <a href="https://www.regen.network/">More info</a>
+          Blockchain for regenerative agriculture, &nbsp;
+          <a href="https://www.regen.network/">more info</a>.
+        </div>
+        <div className="slide-bottom">
+          <Button
+            appearance="ghost"
+            className="slide-cta button-large"
+            onClick={() => {
+              const url = location.href;
+              location.href = '#networks';
+              history.replaceState(null, null, url);
+              dispatch(setNetwork(regenData));
+            }}
+          >
+            STAKE REGEN
+          </Button>
         </div>
       </div>
-      <div className="slide-bottom">
-        <Button
-          appearance="ghost"
-          className="slide-cta button-large"
-          onClick={() => {
-            const url = location.href;
-            location.href = '#networks';
-            history.replaceState(null, null, url);
-            dispatch(setNetwork(regenData));
-          }}
-        >
-          STAKE REGEN
-        </Button>
-      </div>
+
     </div>
   );
 };
