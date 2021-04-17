@@ -106,12 +106,12 @@ $bg-dark-color: #f5f6fa;
           background-color: $bg-dark-color;
         }
       }
-      // .inner.odd2 {
-      //   background-color: $bg-dark-color;
-      //   .rs-ripple.reveal-ripple {
-      //     background-color: $bg-light-color;
-      //   }
-      // }
+      .inner.odd2 {
+        background-color: $bg-dark-color;
+        .rs-ripple.reveal-ripple {
+          background-color: $bg-light-color;
+        }
+      }
     }
 
     button.rs-btn {
