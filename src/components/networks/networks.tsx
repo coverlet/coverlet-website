@@ -35,7 +35,7 @@ export const Networks = (): ReactElement => {
 
   return (
     <div className="full-container networks">
-      <div className="text">&nbsp;</div>
+      <div></div>
       <div className="networks-wrapper">
         <div className="half-container" style={{ position: 'relative' }}>
           <NetworkInfo onHide={() => dispatch(setNetwork(false))} networksRef={networksRef} />
