@@ -26,7 +26,7 @@ export const Header = (): ReactElement => {
             history.replaceState(null, null, url);
           }}
         >
-          STAKE WITH US
+          STAKE WITH US 
         </Button>
       </div>
     </div>

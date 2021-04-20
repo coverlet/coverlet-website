@@ -27,7 +27,7 @@ export const Network = ({ network, classes, onClick }: IProps): ReactElement => 
         role="button"
       >
         <span className="rs-ripple reveal-ripple"></span>
-        <Ripple />
+        {/* <Ripple /> */}
         <div className="top-part">
           <div className="logo">
             <img src={network.icon} alt={network.name} />
@@ -101,6 +101,8 @@ export const Network = ({ network, classes, onClick }: IProps): ReactElement => 
           )}
         </div>
       </div>
+
     </div>
+
   );
 };

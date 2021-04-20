@@ -35,7 +35,7 @@ export const Networks = (): ReactElement => {
 
   return (
     <div className="full-container networks">
-      <div className="text">on these networks</div>
+      <div className="text">&nbsp;</div>
       <div className="networks-wrapper">
         <div className="half-container" style={{ position: 'relative' }}>
           <NetworkInfo onHide={() => dispatch(setNetwork(false))} networksRef={networksRef} />
@@ -62,6 +62,14 @@ export const Networks = (): ReactElement => {
           </div>
         </div>
       </div>
+        <div className="marquee">
+          <div className="marquee__inner" aria-hidden="true">
+            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
+            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
+            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
+            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
+          </div>
+        </div>
     </div>
   );
 };
