@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Button from 'rsuite/lib/Button';
+import { Button } from '../../../library/button/button';
 import { getNetworkData, setNetwork } from '../../../redux/app';
 import './slide-launch.scss';
 
@@ -25,7 +25,8 @@ export const SlideLaunch = (): ReactElement => {
         <div className="slide-bottom">
           <Button
             appearance="ghost"
-            className="slide-cta button-large"
+            color="yellow"
+            className="large"
             onClick={() => {
               const url = location.href;
               location.href = '#networks';
@@ -37,7 +38,6 @@ export const SlideLaunch = (): ReactElement => {
           </Button>
         </div>
       </div>
-
     </div>
   );
 };

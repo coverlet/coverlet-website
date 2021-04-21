@@ -25,4 +25,7 @@ export interface INetwork {
   website?: string;
   websiteFriendly?: string;
   marketcap?: number;
+  stakingRatio?: string;
+  stakingGuide?: string;
+  tos?: string;
 }

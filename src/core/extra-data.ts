@@ -2,7 +2,7 @@
 
 export const extraData = {
   Solana: {
-    delegators: 31,
+    delegators: 32,
     totalStake: 304101,
     commission: 7,
     website: 'https://solana.com/',
@@ -39,10 +39,18 @@ export const extraData = {
     website: 'https://centrifuge.io/',
     websiteFriendly: 'centrifuge.io',
   },
+  Terra: {
+    delegators: 1,
+    totalStake: 507,
+    commission: 5,
+    website: 'https://terra.money/',
+    websiteFriendly: 'terra.money',
+    marketcap: 377828959,
+  },
   Regen: {
-    delegators: 4,
-    totalStake: 23380,
-    commission: 4,
+    delegators: 6,
+    totalStake: 32087,
+    commission: 2,
     stakeLink: 'https://wallet.keplr.app/#/dashboard',
     website: 'https://www.regen.network/',
     websiteFriendly: 'regen.network',

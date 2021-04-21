@@ -7,7 +7,6 @@ import { SmoothScrollProvider } from '../utils/scroll-context';
 // import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
 import '../style/main.scss';
-import '../style/custom-theme.less';
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
   // const containerRef = useRef(null);

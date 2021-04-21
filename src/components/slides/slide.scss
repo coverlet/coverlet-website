@@ -14,18 +14,4 @@
     flex-direction: column;
     margin-top: 7vh;
   }
-
-  button.rs-btn {
-    &.slide-cta {
-      // padding: 12px 48px;
-      // font-weight: bold;
-      // font-size: 0.7em;
-
-      &:hover {
-        color: #000 !important;
-        background-color: #fdd03b;
-        border-color: #fdd03b !important;
-      }
-    }
-  }
 }

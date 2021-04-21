@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Nav, Dropdown, Button } from 'rsuite';
+import { Button } from '../../library/button/button';
 import Link from 'next/link';
 
 import './header.scss';
@@ -18,15 +18,15 @@ export const Header = (): ReactElement => {
       </div>
       <div className="stake-container">
         <Button
-          appearance="primary"
-          className="button-large"
+          color="yellow"
+          size="large"
           onClick={() => {
             const url = location.href;
             location.href = '#networks';
             history.replaceState(null, null, url);
           }}
         >
-          STAKE WITH US 
+          STAKE WITH US
         </Button>
       </div>
     </div>

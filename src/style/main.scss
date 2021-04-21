@@ -1,2 +1,57 @@
-@import 'globals.scss';
-// @import 'carousel.scss';
+@import 'reset.scss';
+@import 'variables.scss';
+
+@font-face {
+  font-family: 'Eina';
+  src: url('/fonts/eina01-bold.woff2') format('woff2'),
+    url('/fonts/eina01-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eina';
+  src: url('/fonts/eina01-regular.woff2') format('woff2'),
+    url('/fonts/eina01-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'Eina', sans-serif;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 768px) / 768));
+  }
+}
+@media screen and (min-width: 2120px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+body {
+  background-color: #f5f6fa;
+  color: #000;
+
+  a {
+    color: #003c8b;
+
+    &:hover {
+      color: #0147a3;
+    }
+  }
+}
+
+.small {
+  font-size: 12px;
+}
+
+.muted {
+  color: #666;
+}

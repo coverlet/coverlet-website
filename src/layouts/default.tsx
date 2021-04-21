@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { Container, Content } from 'rsuite';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import Head from 'next/head';
@@ -29,11 +28,11 @@ export const DefaultLayout = ({
         <link rel="preload" href="/fonts/eina01-regular.woff2" as="font" crossOrigin="" />
         <link rel="preload" href="/fonts/eina01-regular.woff" as="font" crossOrigin="" />
       </Head>
-      <Container className="main-container">
+      <div className="main-container">
         <Header />
-        <Content>{children}</Content>
+        <div>{children}</div>
         <Footer />
-      </Container>
+      </div>
     </div>
   );
 };

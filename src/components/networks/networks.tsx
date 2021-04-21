@@ -62,14 +62,6 @@ export const Networks = (): ReactElement => {
           </div>
         </div>
       </div>
-        <div className="marquee">
-          <div className="marquee__inner" aria-hidden="true">
-            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
-            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
-            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
-            <span>Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;&nbsp; Stake now with us &nbsp;&nbsp;&nbsp;</span>
-          </div>
-        </div>
     </div>
   );
 };
