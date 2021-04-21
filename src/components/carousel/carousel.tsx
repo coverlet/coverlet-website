@@ -11,9 +11,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import Button from 'rsuite/lib/Button';
 import { getNetworkData } from '../../redux/app';
-import { Slide } from '../slide/slide';
 import { SlideLaunch } from '../slides/slide-launch/slide-launch';
 import { SlideNetwork } from '../slides/slide-network/slide-network';
 

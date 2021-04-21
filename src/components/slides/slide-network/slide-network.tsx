@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Area, AreaChart, ResponsiveContainer, Tooltip, YAxis } from 'recharts';
-import Button from 'rsuite/lib/Button';
+import { Button } from '../../../library/button/button';
 import { getNetworkData } from '../../../redux/app';
 import './slide-network.scss';
 

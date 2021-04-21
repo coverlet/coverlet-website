@@ -10,18 +10,6 @@
   z-index: 3;
   padding: 24px 32px;
 
-  button.rs-btn {
-    color: #fff;
-
-    &:hover {
-      color: #003885 !important;
-
-      &.stake-with-us {
-        color: #000 !important;
-      }
-    }
-  }
-
   .container {
     align-items: center;
     display: flex;

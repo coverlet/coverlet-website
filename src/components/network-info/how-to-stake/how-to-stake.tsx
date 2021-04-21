@@ -54,7 +54,7 @@ const getHowToStake = (networkName): ReactElement => {
         </div>
       );
   }
-};
+}; 
 
 export const HowToStake = ({ networkName }): ReactElement => {
   return <div className="how-to-stake">{getHowToStake(networkName)}</div>;

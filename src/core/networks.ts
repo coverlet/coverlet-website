@@ -10,6 +10,7 @@ export const networks: INetwork[] = [
     id: 'solana',
     symbol: 'SOL',
     hasPrice: true,
+    stakingRatio: '62.83',
   },
   {
     name: 'Polkadot',
@@ -20,6 +21,7 @@ export const networks: INetwork[] = [
     id: 'polkadot',
     symbol: 'DOT',
     hasPrice: true,
+    stakingRatio: '65.09',
   },
   {
     name: 'Kusama',
@@ -30,6 +32,18 @@ export const networks: INetwork[] = [
     id: 'kusama',
     symbol: 'KSM',
     hasPrice: true,
+    stakingRatio: '49.81',
+  },
+  {
+    name: 'Terra',
+    address: 'terravaloper12ce886lv4muzt09rgehsta8433d8vz7cxmha0p',
+    icon: 'terra-logo.svg',
+    mainnet: true,
+    live: true,
+    id: 'terra',
+    symbol: 'LUNA',
+    hasPrice: true,
+    stakingRatio: '33',
   },
   {
     name: 'Mina',

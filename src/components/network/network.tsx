@@ -1,8 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Area, AreaChart, ResponsiveContainer, YAxis } from 'recharts';
-import Button from 'rsuite/lib/Button';
-import Ripple from 'rsuite/lib/Ripple';
 import { selectNetwork } from '../../redux/app';
 import { INetwork } from '../../redux/types';
 
@@ -27,7 +25,6 @@ export const Network = ({ network, classes, onClick }: IProps): ReactElement => 
         role="button"
       >
         <span className="rs-ripple reveal-ripple"></span>
-        <Ripple />
         <div className="top-part">
           <div className="logo">
             <img src={network.icon} alt={network.name} />

@@ -12,14 +12,33 @@
     font-size: 4rem;
     font-weight: bold;
     margin-top: -3.8rem;
-    height: 1.4rem;
+    height: 18rem;
     text-align: center;
     color: #fff;
     mix-blend-mode: difference;
+    .subtext {
+      font-size: 1rem;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      max-width: 39%;
+    }
 
     @media screen and (max-width: #{$bp-small}) {
       margin-top: -3.2rem;
       font-size: 3rem;
+
+      .subtext {
+        font-size: 1rem;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 0.4rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        max-width: 98%;
+      }
     }
   }
 }
