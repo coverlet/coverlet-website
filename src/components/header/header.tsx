@@ -7,11 +7,11 @@ import './header.scss';
 
 export const Header = (): ReactElement => {
   return (
-    <div className="coverlet-header full-container">
+    <div className="coverlet-header full-container" >
       <div className="logo">
         <img src="coverlet-logo.svg" alt="Coverlet" />
       </div>
-      <div className="nav">
+      <div className="nav nav--panel">
         <Link href="#networks">Networks</Link>
         <Link href="#under">Projects</Link>
         <Link href="#under">About us</Link>
@@ -27,6 +27,13 @@ export const Header = (): ReactElement => {
           }}
         >
           STAKE WITH US
+        </Button>
+      </div>
+      <div className="menu-burger">
+        <Button>
+          <div></div>
+          <div></div>
+          <div></div>
         </Button>
       </div>
     </div>
