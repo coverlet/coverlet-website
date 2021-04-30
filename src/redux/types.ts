@@ -5,6 +5,7 @@ export interface IRedux {
 export interface IApp {
   network?: INetwork;
   networks?: INetwork[];
+  menuOpen: boolean;
 }
 
 export interface INetwork {
