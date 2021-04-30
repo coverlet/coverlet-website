@@ -31,23 +31,22 @@
     margin-right: 48px;
 
     @media screen and (max-width: #{$bp-small}) {
-        position: fixed;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1000;
-        margin-right: 0;
-        background: #ffc800;
-        flex-flow: column;
-        justify-content: center;
-        transform: translate3d(100%,0,0);
-        transition: transform .5s ease;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      margin-right: 0;
+      background: #ffc800;
+      flex-flow: column;
+      justify-content: center;
+      transform: translate3d(100%, 0, 0);
+      transition: transform 0.5s ease;
 
-        .has-menu & {
-          transform: translate3d(0,0,0);
-        }
-
+      .has-menu & {
+        transform: translate3d(0, 0, 0);
+      }
     }
 
     a {
@@ -66,12 +65,11 @@
       }
 
       @media screen and (max-width: #{$bp-small}) {
-          font-size: 7.5vw;
+        font-size: 7.5vw;
+        color: #000;
+        &:visited {
           color: #000;
-          &:visited {
-            color: #000;
-          }
-
+        }
       }
     }
   }
@@ -118,7 +116,7 @@
         }
       }
 
-      &:hover, .has-menu & {
+      .has-menu & {
         div {
           background-color: #000;
           &:nth-child(1) {
