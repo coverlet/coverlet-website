@@ -6,6 +6,7 @@ export interface IApp {
   network?: INetwork;
   networks?: INetwork[];
   menuOpen: boolean;
+  slide: number;
 }
 
 export interface INetwork {

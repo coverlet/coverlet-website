@@ -1,13 +1,14 @@
 import React, { ReactElement, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../../library/button/button';
-import { selectMenuOpen, setMenuOpen } from '../../redux/app';
+import { selectMenuOpen, setMenuOpen, setSlide, selectSlide } from '../../redux/app';
 import Link from 'next/link';
 
 import './header.scss';
 
 export const Header = (): ReactElement => {
   const menuOpen: boolean = useSelector(selectMenuOpen);
+  const slide: number = useSelector(selectSlide);
   const dispatch = useDispatch();
 
   useEffect(() => {

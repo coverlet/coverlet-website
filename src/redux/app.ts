@@ -5,6 +5,7 @@ const initialState: IApp = {
   network: null,
   networks: [],
   menuOpen: false,
+  slide: 0,
 };
 
 const appSlice = createSlice({
@@ -23,14 +24,19 @@ const appSlice = createSlice({
       ...state,
       menuOpen: action.payload,
     }),
+    setSlide: (state, action) => ({
+      ...state,
+      slide: action.payload,
+    }),
   },
 });
 
-export const { setNetwork, setNetworks, setMenuOpen } = appSlice.actions;
+export const { setNetwork, setNetworks, setMenuOpen, setSlide } = appSlice.actions;
 
 export const selectNetwork = (state: IRedux): INetwork => state.app.network;
 export const selectNetworks = (state: IRedux): INetwork[] => state.app.networks;
 export const selectMenuOpen = (state: IRedux): boolean => state.app.menuOpen;
+export const selectSlide = (state: IRedux): number => state.app.slide;
 export const getNetworkData = (networkName: string) => (state: IRedux): INetwork =>
   state.app.networks.find((n) => n.name == networkName);
 

@@ -4,39 +4,44 @@ import { Button } from '../../../library/button/button';
 import { getNetworkData, setNetwork } from '../../../redux/app';
 import './slide-launch.scss';
 
-export const SlideLaunch = (): ReactElement => {
+export const SlideLaunch = ({ data, active }): ReactElement => {
   const dispatch = useDispatch();
-  const regenData = useSelector(getNetworkData('Regen'));
+  const networkData = useSelector(getNetworkData(data.network));
   return (
-    <div className="slide slide-launch">
-      <div className="slide-top">
-        <img src={'content/regen.svg'} alt="Regen" />
+    <div className={`slide slide-launch ${active && 'active'}`}>
+      <div className="slide-top fade-in">
+        <img src={data.img} alt="Regen" />
       </div>
       <div className="content" style={{ flex: '1', height: 'auto', width: '100%' }}>
-        <div className="top-text">
-          Mainnet Launch
-          <br />
-          April 15, 2021
+        <div className="top-text enter-from-right">
+          {data.title.map((t, i) => {
+            return (
+              <span key={i}>
+                {t}
+                <br />
+              </span>
+            );
+          })}
         </div>
-        <div className="more-info">
-          Blockchain for regenerative agriculture, &nbsp;
-          <a href="https://www.regen.network/">more info</a>.
-        </div>
-        <div className="slide-bottom">
-          <Button
-            appearance="ghost"
-            color="yellow"
-            className="large"
-            onClick={() => {
-              const url = location.href;
-              location.href = '#networks';
-              history.replaceState(null, null, url);
-              dispatch(setNetwork(regenData));
-            }}
-          >
-            STAKE REGEN
-          </Button>
-        </div>
+        <div
+          className="more-info slide-down anim-wait-200"
+          dangerouslySetInnerHTML={{ __html: data.subtitle }}
+        ></div>
+      </div>
+      <div className="slide-bottom">
+        <Button
+          appearance="ghost"
+          color="yellow"
+          className="large  slide-down anim-wait-400"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#networks';
+            history.replaceState(null, null, url);
+            dispatch(setNetwork(networkData));
+          }}
+        >
+          {data.cta}
+        </Button>
       </div>
     </div>
   );

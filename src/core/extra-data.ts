@@ -2,8 +2,8 @@
 
 export const extraData = {
   Solana: {
-    delegators: 32,
-    totalStake: 304101,
+    delegators: 41,
+    totalStake: 292791,
     commission: 7,
     website: 'https://solana.com/',
     websiteFriendly: 'solana.com',
@@ -55,5 +55,24 @@ export const extraData = {
     website: 'https://www.regen.network/',
     websiteFriendly: 'regen.network',
     marketcap: 100000000,
+  },
+  'Fetch.AI': {
+    delegators: 4,
+    totalStake: 322609,
+    commission: 2,
+    stakeLink: 'https://staking.fetch.ai/#/',
+    website: 'https://fetch.ai/',
+    websiteFriendly: 'fetch.ai',
+    marketcap: 746113681,
+  },
+  Sora: {
+    delegators: 25,
+    totalStake: 185,
+    commission: 5,
+    stakeLink:
+      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fws.sora2.soramitsu.co.jp#/staking/actions',
+    website: 'https://sora.org/',
+    websiteFriendly: 'sora.org',
+    marketcap: 350000,
   },
 };

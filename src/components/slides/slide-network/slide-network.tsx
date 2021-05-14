@@ -1,20 +1,18 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Area, AreaChart, ResponsiveContainer, Tooltip, YAxis } from 'recharts';
 import { Button } from '../../../library/button/button';
-import { getNetworkData } from '../../../redux/app';
+import { getNetworkData, setNetwork } from '../../../redux/app';
 import './slide-network.scss';
 
-export const SlideNetwork = (): ReactElement => {
-  const slide = {
-    subtitle: '0% commision until the end of March',
-    title: 'Solana',
-  };
-
+export const SlideNetwork = ({ data, active }): ReactElement => {
   const [browser, setBrowser] = useState(false);
   const [tooltip, showTooltip] = useState(false);
+  const [key, setKey] = useState(0);
+  const dispatch = useDispatch();
 
-  const solanaData = useSelector(getNetworkData('Solana'));
+  const solanaData = useSelector(getNetworkData(data.network));
+  const networkData = useSelector(getNetworkData(data.network));
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,20 +20,46 @@ export const SlideNetwork = (): ReactElement => {
     }, 100);
   }, []);
 
+  useEffect(() => {
+    if (active) {
+      setKey(key + 1);
+    }
+  }, [active]);
+
   return (
-    <div className="slide slide-network">
+    <div className={`slide slide-network ${active && 'active'}`}>
       <div className="slide-top">
-        <div className="title">{slide.title}</div>
-        <div className="subtitle">{slide.subtitle}</div>
+        <div className="big-title fade-in">
+          {data.img && <img src={data.img} alt="Regen" />}
+          {!data.img && data.bigTitle}
+        </div>
+        <div className="title fade-in">
+          {data.title.map((t, i) => {
+            return (
+              <span key={i}>
+                {t}
+                <br />
+              </span>
+            );
+          })}
+        </div>
+        <div
+          className="subtitle more-info slide-down anim-wait-200"
+          dangerouslySetInnerHTML={{ __html: data.subtitle }}
+        ></div>
       </div>
-      <div className="content" style={{ flex: '1', height: 'auto', width: '100%' }}>
+      <div
+        className="content fade-in"
+        style={{ height: '40vh', width: '100%', marginTop: '-12rem' }}
+      >
         {browser && (
           <ResponsiveContainer>
             <AreaChart
+              key={key}
               // width={600}
               // height={500}
               data={solanaData.history}
-              margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+              margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
             >
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -66,7 +90,7 @@ export const SlideNetwork = (): ReactElement => {
                 }}
               />
               <Area
-                animationDuration={2000}
+                animationDuration={400}
                 type="monotone"
                 dataKey="val"
                 stroke="none"
@@ -130,8 +154,18 @@ export const SlideNetwork = (): ReactElement => {
         )}
       </div>
       <div className="slide-bottom">
-        <Button appearance="ghost" className="slide-cta">
-          STAKE WITH US
+        <Button
+          appearance="ghost"
+          color="yellow"
+          className="large  slide-down anim-wait-400"
+          onClick={() => {
+            const url = location.href;
+            location.href = '#networks';
+            history.replaceState(null, null, url);
+            dispatch(setNetwork(networkData));
+          }}
+        >
+          {data.cta}
         </Button>
       </div>
     </div>

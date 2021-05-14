@@ -18,6 +18,38 @@
   flex-direction: column;
   align-items: center;
 
+  .go-left,
+  .go-right {
+    position: absolute;
+    width: 60px;
+    height: 100vh;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    span {
+      padding: 2px;
+      cursor: pointer;
+    }
+
+    img {
+      width: 20px;
+    }
+  }
+  .go-left {
+    left: 0;
+  }
+  .go-right {
+    right: 0;
+  }
+
+  .indicators {
+    bottom: 4rem;
+    position: absolute;
+    display: flex;
+  }
+
   a {
     color: #a8dc2c;
 

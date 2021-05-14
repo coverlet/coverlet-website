@@ -1,17 +1,138 @@
+@keyframes enter-from-right {
+  0% {
+    transform: translateX(600px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes leave-to-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-600px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-back-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .slide {
   padding-top: 20vh;
   width: 100%;
   height: 100vh;
+  position: absolute;
+  top: 0;
 
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
 
+  overflow-x: hidden;
+
   .slide-bottom {
     align-items: center;
     // display: flex;
     flex-direction: column;
-    margin-top: 7vh;
+    margin-bottom: 7rem;
+    // margin-top: 7vh;
+  }
+
+  .enter-from-right {
+    animation: leave-to-right 0.2s ease-in normal;
+    animation-fill-mode: forwards;
+  }
+
+  .slide-down {
+    animation: slide-back-up 0.2s ease-in normal;
+    animation-fill-mode: forwards;
+  }
+
+  .fade-in {
+    animation: fade-out 0.2s ease-in normal;
+    animation-fill-mode: forwards;
+  }
+
+  .anim-wait-200 {
+    animation-delay: 0;
+  }
+
+  .anim-wait-400 {
+    animation-delay: 0;
+  }
+
+  &.active {
+    z-index: 90;
+
+    .enter-from-right {
+      animation: enter-from-right 0.4s cubic-bezier(0.14, 0.7, 0.49, 1) normal;
+      animation-fill-mode: forwards;
+    }
+    .slide-down {
+      animation: slide-down 0.4s cubic-bezier(0.14, 0.7, 0.49, 1) normal;
+      animation-fill-mode: backwards;
+    }
+
+    .fade-in {
+      animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-fill-mode: forwards;
+    }
+
+    .anim-wait-200 {
+      animation-delay: 0.2s;
+    }
+
+    .anim-wait-400 {
+      animation-delay: 0.4s;
+    }
   }
 }
