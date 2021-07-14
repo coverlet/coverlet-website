@@ -11,6 +11,14 @@ import './carousel.scss';
 const slides = [
   {
     type: 'launch',
+    img: 'content/osmosis.svg',
+    title: ['Automated Market Maker', 'for Cosmos Ecosystem'],
+    subtitle: '<a href="https://app.osmosis.zone/">more info</a>',
+    cta: 'STAKE OSMO',
+    network: 'Osmosis',
+  },
+  {
+    type: 'launch',
     img: 'content/regen.svg',
     title: ['Mainnet Launch', 'April 15, 2021'],
     subtitle:

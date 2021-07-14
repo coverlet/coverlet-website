@@ -13,6 +13,16 @@ export const networks: INetwork[] = [
     stakingRatio: '62.83',
   },
   {
+    name: 'Osmosis',
+    address: 'osmovaloper1273zsxhxd5dlgcr2zjf5x25275hjcp3udgkz9z',
+    icon: 'osmosis-logo.svg',
+    mainnet: true,
+    live: true,
+    id: 'osmos',
+    symbol: 'OSMO',
+    hasPrice: false,
+  },
+  {
     name: 'Polkadot',
     address: '1KNoJGdAQ6KAur35cYQYHPnzMzhtAL6M3db59uanQJ1NPv4',
     icon: 'polkadot-logo.svg',
