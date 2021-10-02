@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { setNetworks } from '../redux/app';
 
 import './index.module.scss';
+import { About } from '../components/about/about';
 
 const HomePage = ({ networks }): ReactElement => {
   const dispatch = useDispatch();
@@ -23,8 +24,12 @@ const HomePage = ({ networks }): ReactElement => {
       <PassingText />
       <Networks />
       <Services />
-      <div id="under" style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center' }}>
-        Under construction
+      <About />
+      <div
+        id="under"
+        style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center', marginTop: '10rem' }}
+      >
+        More info coming soon
       </div>
     </div>
   );

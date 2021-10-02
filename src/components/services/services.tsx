@@ -166,7 +166,9 @@ export const Services = (): ReactElement => {
       </div>
       <div className="egde-card last full-container">
         <div className="edge-text">
-          <div className="title">More info coming soon</div>
+          <div id="about" className="title">
+            Meet the team
+          </div>
         </div>
       </div>
     </div>
