@@ -25,6 +25,7 @@
     &.last {
       margin-top: -100vh;
       margin-bottom: -44vh;
+      pointer-events: none;
     }
 
     .title {

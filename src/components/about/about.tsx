@@ -19,6 +19,14 @@ export const About = (): ReactElement => {
           <div className="name">Lucian Marica</div>
           <div className="description">
             <div className="title">Founder, Software Engineer, Devops</div>
+            <div className="icons">
+              <a href="https://www.linkedin.com/in/lucian-marica-945456ba/">
+                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
+              </a>
+              <a href="https://twitter.com/maricalucian/">
+                <img src="twitter.svg" alt="twitter" width="32" height="32" />
+              </a>
+            </div>
             <div className="tag-line">
               Doer, problem solver, passionate about coding, eager to build stuff for blockchain.
             </div>
@@ -35,6 +43,11 @@ export const About = (): ReactElement => {
           <div className="name">Dorin Zoicas</div>
           <div className="description">
             <div className="title">Creative, Designer</div>
+            <div className="icons">
+              <a href="https://www.linkedin.com/in/dorin-zoicas-b020b030/">
+                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
+              </a>
+            </div>
             <div className="tag-line"></div>
             Experienced Art Director with a demonstrated history of working in the information
             technology and services industry.

@@ -5,7 +5,7 @@ export const Footer = (): ReactElement => {
   return (
     <div className="footer">
       <div className="container">
-        lucian@coverlet.cc <br />
+        lucian@coverlet.io <br />
         <br />
         &copy; 2021
       </div>
