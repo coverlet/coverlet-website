@@ -2,9 +2,9 @@
 
 export const extraData = {
   Solana: {
-    delegators: 41,
-    totalStake: 292791,
-    commission: 7,
+    delegators: 731,
+    totalStake: 405354,
+    commission: 0,
     website: 'https://solana.com/',
     websiteFriendly: 'solana.com',
     marketcap: 270018859,
@@ -16,14 +16,6 @@ export const extraData = {
     website: 'https://kusama.network/',
     websiteFriendly: 'kusama.network',
     marketcap: 8470098,
-  },
-  Polkadot: {
-    delegators: 14,
-    totalStake: 6200,
-    commission: 0,
-    website: 'https://polkadot.network/',
-    websiteFriendly: 'polkadot.network',
-    marketcap: 929768387,
   },
   Mina: {
     delegators: 1,
@@ -83,5 +75,14 @@ export const extraData = {
     website: 'https://app.osmosis.zone/',
     websiteFriendly: 'app.osmosis.zone',
     marketcap: 325000000,
+  },
+  Velas: {
+    delegators: 12,
+    totalStake: 5163934,
+    commission: 5,
+    stakeLink: 'https://velasvalidators.com/covermNdkWB48b5m8VVYCvo9wovigsZMoBJRZtk5WqT',
+    website: 'https://velas.com/',
+    websiteFriendly: 'velas.com',
+    marketcap: 2124380663,
   },
 };

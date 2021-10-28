@@ -17,15 +17,15 @@ const slides = [
     cta: 'STAKE OSMO',
     network: 'Osmosis',
   },
-  {
-    type: 'launch',
-    img: 'content/regen.svg',
-    title: ['Mainnet Launch', 'April 15, 2021'],
-    subtitle:
-      'Blockchain for regenerative agriculture, <a href="https://regen.network">more info</a>.',
-    cta: 'STAKE REGEN',
-    network: 'Regen',
-  },
+  // {
+  //   type: 'launch',
+  //   img: 'content/regen.svg',
+  //   title: ['Mainnet Launch', 'April 15, 2021'],
+  //   subtitle:
+  //     'Blockchain for regenerative agriculture, <a href="https://regen.network">more info</a>.',
+  //   cta: 'STAKE REGEN',
+  //   network: 'Regen',
+  // },
   {
     type: 'network',
     bigTitle: 'Fetch AI',
@@ -34,16 +34,16 @@ const slides = [
     cta: 'STAKE FETCHAI',
     network: 'Terra',
   },
-  {
-    type: 'network',
-    img: 'content/polkaswap.svg',
-    bigTitle: 'Sora',
-    title: ['on SORA network'],
-    subtitle:
-      'Polkadot DEX with 2-way bridge to Ethereum, <a href="https://polkaswap.io/">check it out</a>',
-    cta: 'STAKE SORA',
-    network: 'Sora',
-  },
+  // {
+  //   type: 'network',
+  //   img: 'content/polkaswap.svg',
+  //   bigTitle: 'Sora',
+  //   title: ['on SORA network'],
+  //   subtitle:
+  //     'Polkadot DEX with 2-way bridge to Ethereum, <a href="https://polkaswap.io/">check it out</a>',
+  //   cta: 'STAKE SORA',
+  //   network: 'Sora',
+  // },
 ];
 
 const nextSlide = (current) => {

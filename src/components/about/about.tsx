@@ -5,11 +5,10 @@ export const About = (): ReactElement => {
   return (
     <div className="about container">
       <div className="text">
-        Working with us means having the stability of your earnings when the crypto market is
-        stable, and growth of your earnings when it&apos;s growing. We are a team of Web 3.0
-        enthusiasts who see the industry&apos;s potential, and value its top standards. Our years of
-        experience in developing and software engineering in top companies (FTSE 100 IT companies),
-        allow us to create and operate with cutting edge technologies.
+        We are a team of Web 3.0 enthusiasts who see the industry&apos;s potential, and value its
+        top standards. Our years of experience in developing and software engineering in top
+        companies (FTSE 100 IT companies), allow us to create and operate with cutting edge
+        technologies.
       </div>
       <div className="person">
         <div className="photo">
@@ -37,7 +36,25 @@ export const About = (): ReactElement => {
       </div>
       <div className="person">
         <div className="photo">
-          <img src="img/dorin-zoicas.jpeg" alt="Lucian Marica" />
+          <img src="img/andrei-uifalean.jpeg" alt="Andrei Uifalean" />
+        </div>
+        <div className="right">
+          <div className="name">Andrei Uifalean</div>
+          <div className="description">
+            <div className="title">Software Engineer</div>
+            <div className="icons">
+              <a href="https://www.linkedin.com/in/andrei-uifalean-a00b2a9/?originalSubdomain=ro">
+                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
+              </a>
+            </div>
+            <div className="tag-line"></div>
+            Skilled in JavaScript, PHP, React
+          </div>
+        </div>
+      </div>
+      <div className="person">
+        <div className="photo">
+          <img src="img/dorin-zoicas.jpeg" alt="Dorin Zoicas" />
         </div>
         <div className="right">
           <div className="name">Dorin Zoicas</div>
