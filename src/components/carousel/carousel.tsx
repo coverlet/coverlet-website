@@ -101,7 +101,7 @@ export const Carousel = (): ReactElement => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 50000);
+    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 5000);
     return () => clearTimeout(id);
   }, [activeSlide]);
 
