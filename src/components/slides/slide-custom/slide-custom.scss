@@ -1,0 +1,51 @@
+@import '../slide.scss';
+@import '../../../style/variables.scss';
+
+.slide-custom {
+  padding-top: 13vh;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5vh;
+    // justify-content: center;
+
+    .content-top {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .content-bottom {
+      margin-bottom: calc(4rem + 48px);
+    }
+
+    .big-title {
+      font-size: 6rem;
+      font-weight: bold;
+
+      // img {
+      //   width: 26rem;
+      // }
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      text-align: center;
+      padding: 0 3rem;
+    }
+
+    img {
+      &.large {
+        width: 26rem;
+      }
+    }
+  }
+}

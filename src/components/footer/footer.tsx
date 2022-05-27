@@ -7,7 +7,7 @@ export const Footer = (): ReactElement => {
       <div className="container">
         lucian@coverlet.io <br />
         <br />
-        &copy; 2021
+        &copy; 2022
       </div>
     </div>
   );

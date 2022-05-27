@@ -11,7 +11,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
   const [key, setKey] = useState(0);
   const dispatch = useDispatch();
 
-  const solanaData = useSelector(getNetworkData(data.network));
+  // const solanaData = useSelector(getNetworkData(data.network));
   const networkData = useSelector(getNetworkData(data.network));
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
     <div className={`slide slide-network ${active && 'active'}`}>
       <div className="slide-top">
         <div className="big-title fade-in">
-          {data.img && <img src={data.img} alt="Regen" />}
+          {data.img && <img src={data.img} alt={data.network} />}
           {!data.img && data.bigTitle}
         </div>
         <div className="title fade-in">
@@ -58,7 +58,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
               key={key}
               // width={600}
               // height={500}
-              data={solanaData.history}
+              data={networkData.history}
               margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
             >
               <defs>
@@ -114,7 +114,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
                 // @ts-ignore
                 label={(props) => {
                   const { x, y, stroke, value, index } = props;
-                  if (index < solanaData.history.length - 1) {
+                  if (index < networkData.history.length - 1) {
                     return (
                       <g>
                         <text

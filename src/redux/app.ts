@@ -37,7 +37,9 @@ export const selectNetwork = (state: IRedux): INetwork => state.app.network;
 export const selectNetworks = (state: IRedux): INetwork[] => state.app.networks;
 export const selectMenuOpen = (state: IRedux): boolean => state.app.menuOpen;
 export const selectSlide = (state: IRedux): number => state.app.slide;
-export const getNetworkData = (networkName: string) => (state: IRedux): INetwork =>
-  state.app.networks.find((n) => n.name == networkName);
+export const getNetworkData =
+  (networkName: string) =>
+  (state: IRedux): INetwork =>
+    state.app.networks.find((n) => n.name == networkName);
 
 export default appSlice.reducer;

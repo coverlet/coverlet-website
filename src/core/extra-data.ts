@@ -3,11 +3,11 @@
 export const extraData = {
   Solana: {
     delegators: 731,
-    totalStake: 405354,
+    totalStake: 502833,
     commission: 0,
     website: 'https://solana.com/',
     websiteFriendly: 'solana.com',
-    marketcap: 270018859,
+    marketcap: 320489450,
   },
   Kusama: {
     delegators: 4,
@@ -31,19 +31,12 @@ export const extraData = {
     website: 'https://centrifuge.io/',
     websiteFriendly: 'centrifuge.io',
   },
-  Terra: {
-    delegators: 1,
-    totalStake: 143191,
-    commission: 5,
-    website: 'https://terra.money/',
-    websiteFriendly: 'terra.money',
-    marketcap: 377828959,
-  },
   Regen: {
     delegators: 15,
     totalStake: 976896,
     commission: 2,
-    stakeLink: 'https://wallet.keplr.app/#/regen/stake',
+    stakeLink:
+      'https://wallet.keplr.app/#/regen/stake?modal=stake&chainId=regen-1&validator=regenvaloper1273zsxhxd5dlgcr2zjf5x25275hjcp3uupmg2z',
     website: 'https://www.regen.network/',
     websiteFriendly: 'regen.network',
     marketcap: 100000000,
@@ -57,21 +50,12 @@ export const extraData = {
     websiteFriendly: 'fetch.ai',
     marketcap: 746113681,
   },
-  Sora: {
-    delegators: 25,
-    totalStake: 185,
-    commission: 5,
-    stakeLink:
-      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fws.sora2.soramitsu.co.jp#/staking/actions',
-    website: 'https://sora.org/',
-    websiteFriendly: 'sora.org',
-    marketcap: 350000,
-  },
   Osmosis: {
     delegators: 25,
     totalStake: 6022,
     commission: 5,
-    stakeLink: 'https://wallet.keplr.app/#/osmosis/stake',
+    stakeLink:
+      'https://wallet.keplr.app/#/osmosis/stake?modal=stake&chainId=osmosis-1&validator=osmovaloper1273zsxhxd5dlgcr2zjf5x25275hjcp3udgkz9z',
     website: 'https://app.osmosis.zone/',
     websiteFriendly: 'app.osmosis.zone',
     marketcap: 325000000,
@@ -84,5 +68,41 @@ export const extraData = {
     website: 'https://velas.com/',
     websiteFriendly: 'velas.com',
     marketcap: 2124380663,
+  },
+  Chihuahua: {
+    delegators: 45,
+    totalStake: 25722105,
+    commission: 5,
+    stakeLink: 'https://chihuahua.omniflix.co/stake',
+    website: 'https://www.chihuahua.wtf/',
+    websiteFriendly: 'chihuahua.wtf',
+    marketcap: 103000000000,
+  },
+  Cerberus: {
+    delegators: 12,
+    totalStake: 22683643,
+    commission: 5,
+    stakeLink: 'https://stake.cerberus.zone/',
+    website: 'https://cerberus.zone/',
+    websiteFriendly: 'cerberus.zone',
+    marketcap: 100000000000,
+  },
+  Concordium: {
+    delegators: 1,
+    totalStake: 790000,
+    commission: 0,
+    website: 'https://www.concordium.com/',
+    websiteFriendly: 'concordium.com',
+    marketcap: 2124380663,
+  },
+  Evmos: {
+    delegators: 10,
+    totalStake: 4122,
+    commission: 5,
+    stakeLink:
+      'https://wallet.keplr.app/#/evmos/stake?modal=stake&chainId=evmos_9001-2&validator=evmosvaloper1kualgrr9qup0983gj44fczyvcda8ea47y494mz',
+    website: 'https://evmos.org/',
+    websiteFriendly: 'evmos.org',
+    marketcap: 0,
   },
 };

@@ -79,13 +79,13 @@
 
   overflow-x: hidden;
 
-  .slide-bottom {
-    align-items: center;
-    // display: flex;
-    flex-direction: column;
-    margin-bottom: 7rem;
-    // margin-top: 7vh;
-  }
+  // .slide-bottom {
+  //   align-items: center;
+  //   // display: flex;
+  //   flex-direction: column;
+  //   margin-bottom: 7rem;
+  //   // margin-top: 7vh;
+  // }
 
   .enter-from-right {
     animation: leave-to-right 0.2s ease-in normal;
@@ -103,11 +103,11 @@
   }
 
   .anim-wait-200 {
-    animation-delay: 0;
+    //animation-delay: 1200;
   }
 
   .anim-wait-400 {
-    animation-delay: 0;
+    //animation-delay: 1400;
   }
 
   &.active {
@@ -115,7 +115,7 @@
 
     .enter-from-right {
       animation: enter-from-right 0.4s cubic-bezier(0.14, 0.7, 0.49, 1) normal;
-      animation-fill-mode: forwards;
+      animation-fill-mode: backwards;
     }
     .slide-down {
       animation: slide-down 0.4s cubic-bezier(0.14, 0.7, 0.49, 1) normal;

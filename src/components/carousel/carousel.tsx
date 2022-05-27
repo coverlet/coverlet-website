@@ -3,47 +3,88 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getNetworkData, selectSlide, setSlide } from '../../redux/app';
 import { PieTimer } from '../pie-timer/pie-timer';
 import { Slide } from '../slides/slide';
-import { SlideLaunch } from '../slides/slide-launch/slide-launch';
+import { SlideCustom } from '../slides/slide-custom/slide-custom';
 import { SlideNetwork } from '../slides/slide-network/slide-network';
 
 import './carousel.scss';
 
 const slides = [
   {
-    type: 'launch',
-    img: 'content/osmosis.svg',
-    title: ['Automated Market Maker', 'for Cosmos Ecosystem'],
-    subtitle: '<a href="https://app.osmosis.zone/">more info</a>',
-    cta: 'STAKE OSMO',
-    network: 'Osmosis',
+    type: 'custom',
+    // top: {
+
+    // },
+    content: [
+      {
+        type: 'img',
+        src: 'content/evmos.svg',
+        alt: 'Evmos',
+        wrapperClass: 'enter-from-right',
+        class: 'large',
+      },
+      {
+        type: 'text',
+        textType: 'subtitle',
+        html: true,
+        wrapperClass: 'slide-down anim-wait-200',
+        data: 'Evmos is bringing the world of Ethereum-based applications and assets to the interoperable networks of the Cosmos ecosystem<br/><a href="https://docs.evmos.org/about/intro/overview.html">more info</a>',
+      },
+      {
+        type: 'button',
+        position: 'bottom',
+        text: 'STAKE',
+        wrapperClass: 'slide-down anim-wait-400',
+      },
+    ],
+    // bottom: {
+    //   cta: 'STAKE REGEN',
+    //   network: 'Regen',
+    // },
   },
-  // {
-  //   type: 'launch',
-  //   img: 'content/regen.svg',
-  //   title: ['Mainnet Launch', 'April 15, 2021'],
-  //   subtitle:
-  //     'Blockchain for regenerative agriculture, <a href="https://regen.network">more info</a>.',
-  //   cta: 'STAKE REGEN',
-  //   network: 'Regen',
-  // },
   {
-    type: 'network',
-    bigTitle: 'Fetch AI',
-    title: ['2% comission fee', 'until July 22, 2021'],
-    subtitle: 'Artificial Intelligence for Blockchains, <a href="https://fetch.ai/">more info</a>.',
-    cta: 'STAKE FETCHAI',
-    network: 'Terra',
+    type: 'custom',
+    // top: {
+
+    // },
+    content: [
+      {
+        type: 'img',
+        src: 'content/osmosis.svg',
+        alt: 'Osmosis',
+        wrapperClass: 'enter-from-right',
+        class: 'large',
+      },
+      {
+        type: 'text',
+        textType: 'title',
+        wrapperClass: 'enter-from-right anim-wait-200',
+        data: 'Automated Market Maker',
+      },
+      {
+        type: 'text',
+        textType: 'title',
+        wrapperClass: 'enter-from-right anim-wait-200',
+        data: 'for Cosmos Ecosystem',
+      },
+      {
+        type: 'text',
+        textType: 'subtitle',
+        html: true,
+        wrapperClass: 'slide-down anim-wait-400',
+        data: '<a href="https://app.osmosis.zone/">more info</a>',
+      },
+      {
+        type: 'button',
+        position: 'bottom',
+        text: 'STAKE',
+        wrapperClass: 'slide-down anim-wait-400',
+      },
+    ],
+    // bottom: {
+    //   cta: 'STAKE REGEN',
+    //   network: 'Regen',
+    // },
   },
-  // {
-  //   type: 'network',
-  //   img: 'content/polkaswap.svg',
-  //   bigTitle: 'Sora',
-  //   title: ['on SORA network'],
-  //   subtitle:
-  //     'Polkadot DEX with 2-way bridge to Ethereum, <a href="https://polkaswap.io/">check it out</a>',
-  //   cta: 'STAKE SORA',
-  //   network: 'Sora',
-  // },
 ];
 
 const nextSlide = (current) => {
@@ -60,7 +101,7 @@ export const Carousel = (): ReactElement => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 5000);
+    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 50000);
     return () => clearTimeout(id);
   }, [activeSlide]);
 

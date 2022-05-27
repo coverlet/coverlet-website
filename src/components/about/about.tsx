@@ -43,7 +43,7 @@ export const About = (): ReactElement => {
           <div className="description">
             <div className="title">Software Engineer</div>
             <div className="icons">
-              <a href="https://www.linkedin.com/in/andrei-uifalean-a00b2a9/?originalSubdomain=ro">
+              <a href="https://www.linkedin.com/in/andrei-uifalean-a00b2a9/">
                 <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
               </a>
             </div>

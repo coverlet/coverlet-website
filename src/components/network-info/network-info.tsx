@@ -319,7 +319,11 @@ export const NetworkInfo = ({ onHide, networksRef }): ReactElement => {
               <div className="more-info">
                 <div className="info-title">How to stake</div>
                 <div className="more-info-text">
-                  <HowToStake networkName={network?.name} />
+                  <HowToStake
+                    networkName={network?.name}
+                    symbol={network?.symbol}
+                    valoper={network?.address}
+                  />
                 </div>
               </div>
               <div className="stake-button">
