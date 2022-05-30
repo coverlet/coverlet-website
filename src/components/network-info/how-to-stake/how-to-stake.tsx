@@ -12,19 +12,24 @@ const getHowToStake = (networkName, symbol, valoper): ReactElement => {
           <div className="hts-title">Using Keplr Wallet</div>
           <div className="hts-text">
             Assuming you already have your {symbol} token in the Keplr Wallet:
+            <br />
+            <br />
             <ol>
               <li>
+                1. Use the “STAKE {symbol}” button below <br /> OR <br />
                 Go to{' '}
                 <a href="https://wallet.keplr.app/#/dashboard">
                   https://wallet.keplr.app/#/dashboard
                 </a>{' '}
-                or use “STAKE {symbol}” button below
               </li>
               <li>From the menu on the left, select “{networkName}” and click “Stake”</li>
-              <li>In the list that opened, search for “Coverlet” and click “Manage”</li>
               <li>
-                Select “Delegate”, then fill out the amount of REGEN that you’d like to delegate,
-                then click “Delegate” button
+                In the list that opened, search for “Coverlet”, click “Manage” and then select
+                “Delegate”
+              </li>
+              <li>
+                2. Fill out the amount of {symbol} that you’d like to delegate, then click
+                “Delegate” button
               </li>
               <li>
                 The Keplr extension will open. Check that all the details of the transaction are
