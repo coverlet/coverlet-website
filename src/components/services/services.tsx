@@ -144,19 +144,28 @@ export const Services = (): ReactElement => {
             <div className="card full">
               <div className="content">
                 <div className="title-content">Availability</div>
-                <div>High uptime</div>
+                <div>
+                  Experience round-the-clock network access with our persistent uptime, ensuring an
+                  always-online, always accessible service.
+                </div>
               </div>
             </div>
             <div className="card full">
               <div className="content">
                 <div className="title-content">High Security</div>
-                <div>No compromises here</div>
+                <div>
+                  Benefit from robust security protocols, multilayered protection systems, and
+                  advanced encryption measures, safeguarding your assets and data.
+                </div>
               </div>
             </div>
             <div className="card full">
               <div className="content">
                 <div className="title-content">Reliability</div>
-                <div>Monitoring and redundancy</div>
+                <div>
+                  Trust in our proven track record of success, as we deliver trustworthy and
+                  dependable network performance with unwavering stability and accuracy.
+                </div>
               </div>
             </div>
           </div>
@@ -167,7 +176,7 @@ export const Services = (): ReactElement => {
       <div className="egde-card last full-container">
         <div className="edge-text">
           <div id="about" className="title">
-            Meet the team
+            What are we working on
           </div>
         </div>
       </div>

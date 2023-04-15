@@ -30,7 +30,7 @@ export const SmoothScrollProvider = ({ children, options }) => {
     return () => {
       return () => onScroll && window.removeEventListener('scroll', onScroll);
     };
-  }); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <SmoothScrollContext.Provider value={{ scroll, scrollTop, scrolling }}>

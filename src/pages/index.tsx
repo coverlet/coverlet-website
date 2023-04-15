@@ -10,6 +10,7 @@ import { setNetworks } from '../redux/app';
 
 import './index.module.scss';
 import { About } from '../components/about/about';
+import { Projects } from '../components/projects/projects';
 
 const HomePage = ({ networks }): ReactElement => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const HomePage = ({ networks }): ReactElement => {
       <PassingText />
       <Networks />
       <Services />
+      <Projects />
       <About />
       <div
         id="under"
