@@ -66,7 +66,7 @@ export const Projects = (): ReactElement => {
               Don&apos;t miss out on the latest updates, early access, and exclusive NFT drops from
               our exciting trading card game!{' '}
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '0.4rem' }}>
+            <div className="subscribe-container">
               <input type="text" />
               <button>Subscribe</button>
             </div>
