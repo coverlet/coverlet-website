@@ -1,4 +1,7 @@
-import { ReactElement, useContext, useEffect, useState } from 'react';
+/* eslint-disable prefer-rest-params */
+/* eslint-disable jsx-a11y/media-has-caption */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { ReactElement, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { SmoothScrollContext } from '../../utils/scroll-context';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap, Bounce, Expo } from 'gsap';
@@ -175,9 +178,7 @@ export const Services = (): ReactElement => {
       </div>
       <div className="egde-card last full-container">
         <div className="edge-text">
-          <div id="about" className="title">
-            What are we working on
-          </div>
+          <div className="title">What we are working on</div>
         </div>
       </div>
     </div>

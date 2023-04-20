@@ -34,7 +34,7 @@ export const Header = (): ReactElement => {
           Networks
         </a>
         <a
-          href="#under"
+          href="#projects"
           onClick={() => {
             dispatch(setMenuOpen(!menuOpen));
           }}

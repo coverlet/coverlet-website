@@ -3,7 +3,8 @@ import './about.scss';
 
 export const About = (): ReactElement => {
   return (
-    <div className="about container">
+    <div className="about container" id="about">
+      <div className="section-title">The team</div>
       <div className="text">
         We are a team of Web 3.0 enthusiasts who see the industry&apos;s potential, and value its
         top standards. Our years of experience in developing and software engineering in top

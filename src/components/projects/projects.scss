@@ -4,6 +4,38 @@
   justify-content: center;
   align-items: center;
 
+  .video-track {
+    margin-top: -56vh;
+    // margin-top: 0;
+
+    .video-container {
+      height: 100vh;
+      width: 100vw;
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      // mix-blend-mode: darken;
+      // opacity: 0.2;
+
+      .video-background {
+        height: 100vh;
+      }
+    }
+
+    #videoForeground {
+      height: 600vh;
+      margin-top: -97vh;
+      margin-bottom: -144vh;
+      // margin-top: 0;
+      // margin-bottom: 0;
+    }
+  }
+
   .text {
     font-size: 1rem;
     font-weight: normal;
@@ -14,10 +46,14 @@
     max-width: 62%;
   }
 
+  .project-list {
+    // width: 82%;
+  }
+
   .project {
     display: flex;
-    max-width: 82%;
-    width: 82%;
+    max-width: 100%;
+    max-width: 100%;
     // background-color: black;
     // color: #fff;
     padding: 2rem;
@@ -25,6 +61,36 @@
 
     .description {
       flex: 1;
+    }
+
+    input {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 1em;
+      border-top-left-radius: 1em;
+      border: 1px solid #4e2c6e;
+      padding: 0 12px;
+      box-sizing: border-box;
+      height: 2rem;
+      outline: none;
+    }
+
+    button {
+      font-size: 1em;
+      border-radius: 1em;
+      border: 0;
+      padding: 0 12px;
+      border-top-right-radius: 1em;
+      border-bottom-right-radius: 1em;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      background-color: #4e2c6e;
+      border: 1px solid #4e2c6e;
+      color: #fff;
+      box-sizing: border-box;
+      height: 2rem;
     }
   }
 
@@ -34,14 +100,32 @@
   }
 
   .photo {
-    margin-right: 2rem;
-
     img {
-      width: 200px;
+      width: 400px;
       border-radius: 5%;
       border-color: #999999;
       border-width: 1px;
       border-style: solid;
+      margin-left: 2rem;
+    }
+  }
+
+  .project-hero-track {
+    height: 100vh;
+    margin-top: -50vh;
+
+    .project-hero-text {
+      height: 10vh;
+      position: sticky;
+      top: 45vh;
+      z-index: -2;
+
+      font-size: 4rem;
+      font-weight: bold;
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 }

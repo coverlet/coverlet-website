@@ -27,12 +27,6 @@ const HomePage = ({ networks }): ReactElement => {
       <Services />
       <Projects />
       <About />
-      <div
-        id="under"
-        style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center', marginTop: '10rem' }}
-      >
-        More info coming soon
-      </div>
     </div>
   );
 };

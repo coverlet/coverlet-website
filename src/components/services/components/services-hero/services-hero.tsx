@@ -8,7 +8,7 @@ import './services-hero.scss';
 export const ServicesHero = (): ReactElement => {
   useEffect(() => {
     gsap.registerPlugin(MorphSVGPlugin);
-  });
+  }, []);
 
   return (
     <div className="services-hero" style={{ position: 'relative' }}>
