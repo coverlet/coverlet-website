@@ -22,10 +22,11 @@
   .text {
     font-size: 1rem;
     font-weight: normal;
-    text-align: center;
+    // text-align: center;
     margin-top: 0.4rem;
     margin-bottom: 1rem;
     display: inline-block;
+    padding: 2rem;
   }
 
   .person {
@@ -47,11 +48,16 @@
     margin-right: 2rem;
 
     img {
-      width: 200px;
-      border-radius: 100px;
+      width: 100px;
+      border-radius: 50%;
       border-color: #999999;
       border-width: 1px;
       border-style: solid;
+
+      @media screen and (min-width: #{$bp-small}) {
+        font-size: 3rem;
+        width: 200px;
+      }
     }
   }
 
