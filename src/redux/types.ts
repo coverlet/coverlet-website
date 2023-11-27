@@ -30,4 +30,5 @@ export interface INetwork {
   stakingRatio?: string;
   stakingGuide?: string;
   tos?: string;
+  description?: string;
 }

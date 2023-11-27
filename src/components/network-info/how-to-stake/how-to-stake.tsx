@@ -5,7 +5,8 @@ import './how-to-stake.scss';
 const getHowToStake = (networkName, symbol, valoper): ReactElement => {
   switch (networkName) {
     case 'Regen':
-    case 'Osmos':
+    case 'Osmosis':
+    case 'Chihuahua':
     case 'Evmos':
       return (
         <div>
@@ -48,18 +49,64 @@ const getHowToStake = (networkName, symbol, valoper): ReactElement => {
           </div>
         </div>
       );
-    default:
+    case 'Solana':
       return (
         <div>
-          Like our website? We like it also. Unfortunately, having a design so fresh comes with the
-          downside that some data is yet to pe populated. Like this section. See you very soon with
-          info on how to stake {networkName}
+          <div className="hts-title">Using a wallet</div>
+          <div className="hts-text">
+            <ol>
+              <li style={{ marginTop: '4px' }}>1. Create or Open a Solana Wallet</li>
+              <li style={{ fontSize: '0.95em', marginLeft: '16px' }}>
+                Use wallets like Phantom or Solflare
+              </li>
+            </ol>
+            <ol>
+              <li style={{ marginTop: '4px' }}>2. Add SOL to Your Wallet</li>
+              <li style={{ fontSize: '0.95em', marginLeft: '16px' }}>
+                Purchase SOL from an exchange and transfer it to your wallet.
+              </li>
+            </ol>
+            <ol>
+              <li style={{ marginTop: '4px' }}>3. Delegate Your Stake</li>
+              <li style={{ fontSize: '0.95em', marginLeft: '16px' }}>
+                Go to the 'Stake' option in your wallet, select 'Delegate' or 'Add Stake,' and enter
+                your validator address. Decide the amount of SOL to stake.
+              </li>
+            </ol>
+            <ol>
+              <li style={{ marginTop: '4px' }}>4. Confirm the Transaction</li>
+              <li style={{ fontSize: '0.95em', marginLeft: '16px' }}>
+                Check the details and confirm. Note there might be a small fee.
+              </li>
+            </ol>
+          </div>
+          <div className="hts-title">Using command line</div>
+          Follow <a href="https://docs.solana.com/cli/delegate-stake">this guide</a> from Solana's
+          docs.
         </div>
       );
+    case 'Fetch.AI':
+      return (
+        <div>
+          Follow <a href="https://fetch.ai/docs/guides/fetch-network/how-to-stake">this guide</a>{' '}
+          from Fetch.ai docs.
+        </div>
+      );
+    case 'Aleph Zero':
+      return (
+        <div>
+          Follow{' '}
+          <a href="https://alephzero.org/blog/how-to-stake-azero-on-the-aleph-zero-mainnet/">
+            this guide
+          </a>{' '}
+          from Aleph Zero docs.
+        </div>
+      );
+    default:
+      return <div></div>;
   }
 };
 
 export const HowToStake = ({ networkName, symbol, valoper }): ReactElement => {
   return <div className="how-to-stake">{getHowToStake(networkName, symbol, valoper)}</div>;
 };
- 

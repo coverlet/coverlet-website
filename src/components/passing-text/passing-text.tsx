@@ -29,8 +29,9 @@ export const PassingText = (): ReactElement => {
       >
         <span style={{ display: 'block' }}>Stake with us</span>
         <span className="subtext">
-          We operate validators on these projects. Token holders can stake with us to help secure
-          these networks and earn staking rewards. Join the staking ecosystem today with Coverlet.
+          At Coverlet, we run validators for leading blockchain projects. By staking your tokens
+          with us, you not only contribute to securing these networks but also earn staking rewards.
+          Maximize your digital assets' potential with Coverlet!
         </span>
       </div>
     </div>

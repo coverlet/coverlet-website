@@ -13,22 +13,20 @@ export const About = (): ReactElement => {
       </div>
       <div className="person">
         <div className="photo">
-          <img src="img/lucian-marica.jpeg" alt="Lucian Marica" />
+          <img src="img/leon-photo.png" alt="Leon" />
         </div>
         <div className="right">
-          <div className="name">Lucian Marica</div>
+          <div className="name">Leon</div>
           <div className="description">
             <div className="title">Founder, Software Engineer, Devops</div>
             <div className="icons">
-              <a href="https://www.linkedin.com/in/lucian-marica-945456ba/">
-                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
-              </a>
-              <a href="https://twitter.com/maricalucian/">
+              <a href="https://twitter.com/leongameon/">
                 <img src="twitter.svg" alt="twitter" width="32" height="32" />
               </a>
             </div>
             <div className="tag-line">
-              Doer, problem solver, passionate about coding, eager to build stuff for blockchain.
+              Doer, problem solver, passionate about coding, who can't keep away from tinkering with
+              blockchain.
             </div>
             More than 12 years’ experience as Software Engineer. Skilled in React, ReactNative,
             NodeJS, Rust, Java, PHP.
@@ -37,38 +35,17 @@ export const About = (): ReactElement => {
       </div>
       <div className="person">
         <div className="photo">
-          <img src="img/andrei-uifalean.jpeg" alt="Andrei Uifalean" />
+          <img src="img/andrei-photo.jpeg" alt="Andrei" />
         </div>
         <div className="right">
-          <div className="name">Andrei Uifalean</div>
+          <div className="name">Andrei</div>
           <div className="description">
             <div className="title">Software Engineer</div>
-            <div className="icons">
-              <a href="https://www.linkedin.com/in/andrei-uifalean-a00b2a9/">
-                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
-              </a>
+            <div className="icons"></div>
+            <div className="tag-line">
+              Tech Aficionado, with a flair for dissecting complex problems.
             </div>
-            <div className="tag-line"></div>
             Skilled in JavaScript, PHP, React
-          </div>
-        </div>
-      </div>
-      <div className="person">
-        <div className="photo">
-          <img src="img/dorin-zoicas.jpeg" alt="Dorin Zoicas" />
-        </div>
-        <div className="right">
-          <div className="name">Dorin Zoicas</div>
-          <div className="description">
-            <div className="title">Creative, Designer</div>
-            <div className="icons">
-              <a href="https://www.linkedin.com/in/dorin-zoicas-b020b030/">
-                <img src="linkedin.svg" alt="linkedin" width="32" height="32" />
-              </a>
-            </div>
-            <div className="tag-line"></div>
-            Experienced Art Director with a demonstrated history of working in the information
-            technology and services industry.
           </div>
         </div>
       </div>

@@ -148,8 +148,9 @@ export const Services = (): ReactElement => {
               <div className="content">
                 <div className="title-content">Availability</div>
                 <div>
-                  Experience round-the-clock network access with our persistent uptime, ensuring an
-                  always-online, always accessible service.
+                  Enjoy reliable and constant access with our validator's strong uptime. We're
+                  always online, helping you earn staking rewards and keeping the network secure and
+                  stable.
                 </div>
               </div>
             </div>
@@ -157,8 +158,9 @@ export const Services = (): ReactElement => {
               <div className="content">
                 <div className="title-content">High Security</div>
                 <div>
-                  Benefit from robust security protocols, multilayered protection systems, and
-                  advanced encryption measures, safeguarding your assets and data.
+                  We harden SSH access, we close all ports and only allow what is necessary, we
+                  block ips that that scan for vulnerabilities, we monitor the node and we have
+                  multi-level alerting system set in place.
                 </div>
               </div>
             </div>
@@ -166,8 +168,8 @@ export const Services = (): ReactElement => {
               <div className="content">
                 <div className="title-content">Reliability</div>
                 <div>
-                  Trust in our proven track record of success, as we deliver trustworthy and
-                  dependable network performance with unwavering stability and accuracy.
+                  Count on us for reliable and steady network performance. Our history of success
+                  shows we're committed to providing a stable and accurate service you can trust.
                 </div>
               </div>
             </div>

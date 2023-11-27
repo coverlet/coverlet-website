@@ -50,7 +50,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
       </div>
       <div
         className="content fade-in"
-        style={{ height: '40vh', width: '100%', marginTop: '-12rem' }}
+        style={{ height: '40vh', width: '100%', marginTop: '-10rem' }}
       >
         {browser && (
           <ResponsiveContainer>
@@ -63,7 +63,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
             >
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#ffffff" stopOpacity={0.8} />
+                  <stop offset="5%" stopColor="#ffffff" stopOpacity={0.7} />
                   <stop offset="75%" stopColor="#FFFFFF" stopOpacity={0.1} />
                   <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0} />
                 </linearGradient>
@@ -121,7 +121,7 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
                           x={x}
                           y={y}
                           dy={-12}
-                          fill="#fff"
+                          fill="#ffffffbb"
                           fontWeight="bold"
                           fontSize={12}
                           textAnchor="middle"
@@ -133,9 +133,17 @@ export const SlideNetwork = ({ data, active }): ReactElement => {
                   }
                   return (
                     <g>
-                      <rect x={x - 54} y={y - 28} width="48" height="22" fill="#fdd03b" />
+                      <rect
+                        x={x - 62}
+                        y={y - 28}
+                        rx="8"
+                        ry="8"
+                        width="58"
+                        height="22"
+                        fill="#fdd03b"
+                      />
                       <text
-                        x={x - 30}
+                        x={x - 34}
                         y={y}
                         dy={-12}
                         fill="#000"

@@ -45,7 +45,6 @@ export const extraData = {
     delegators: 12,
     totalStake: 322609,
     commission: 8,
-    stakeLink: 'https://staking.fetch.ai/#/',
     website: 'https://fetch.ai/',
     websiteFriendly: 'fetch.ai',
     marketcap: 746113681,

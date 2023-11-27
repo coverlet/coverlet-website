@@ -89,7 +89,7 @@ export const Network = ({ network, classes, onClick }: IProps): ReactElement => 
         <div className="bottom-part">
           {network.mainnet ? (
             network.live ? (
-              <div className="status-text">Delegate</div>
+              <div className="status-text">More info</div>
             ) : (
               <div className="status-text">More info</div>
             )

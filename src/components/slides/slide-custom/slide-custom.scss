@@ -16,6 +16,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      gap: 16px;
     }
     .content-bottom {
       margin-bottom: calc(4rem + 48px);
@@ -45,6 +46,7 @@
     img {
       &.large {
         width: 26rem;
+        max-width: 80%;
       }
     }
   }

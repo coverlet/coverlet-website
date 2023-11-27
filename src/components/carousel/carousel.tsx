@@ -10,36 +10,23 @@ import './carousel.scss';
 
 const slides = [
   {
-    type: 'custom',
-    // top: {
-
-    // },
-    content: [
-      {
-        type: 'img',
-        src: 'content/evmos.svg',
-        alt: 'Evmos',
-        wrapperClass: 'enter-from-right',
-        class: 'large',
-      },
-      {
-        type: 'text',
-        textType: 'subtitle',
-        html: true,
-        wrapperClass: 'slide-down anim-wait-200',
-        data: 'Evmos is bringing the world of Ethereum-based applications and assets to the interoperable networks of the Cosmos ecosystem<br/><a href="https://docs.evmos.org/about/intro/overview.html">more info</a>',
-      },
-      {
-        type: 'button',
-        position: 'bottom',
-        text: 'STAKE',
-        wrapperClass: 'slide-down anim-wait-400',
-      },
-    ],
-    // bottom: {
-    //   cta: 'STAKE REGEN',
-    //   network: 'Regen',
-    // },
+    type: 'network',
+    img: 'content/solana-big.svg',
+    bigTitle: 'Solana',
+    title: ['Earn SOL by delegating to our validator'],
+    subtitle:
+      'Stake with confidence knowing your tokens are in safe hands<br/>AMD EPYC 7443P 512GB RAM 2x4TB NVME',
+    cta: 'STAKE SOLANA',
+    network: 'Solana',
+  },
+  {
+    type: 'network',
+    img: 'content/azero-logo.svg',
+    bigTitle: 'Aleph Zero',
+    title: [' Redefining Speed & Security in Blockchain'],
+    subtitle: 'Join the Aleph Zero Revolution: Fast, Private, Scalable.',
+    cta: 'STAKE AZERO',
+    network: 'Aleph Zero',
   },
   {
     type: 'custom',
@@ -58,13 +45,13 @@ const slides = [
         type: 'text',
         textType: 'title',
         wrapperClass: 'enter-from-right anim-wait-200',
-        data: 'Automated Market Maker',
+        data: 'The largest interchain DEX',
       },
       {
         type: 'text',
         textType: 'title',
         wrapperClass: 'enter-from-right anim-wait-200',
-        data: 'for Cosmos Ecosystem',
+        data: 'Revolutionizing DeFi',
       },
       {
         type: 'text',
@@ -101,7 +88,7 @@ export const Carousel = (): ReactElement => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 5000);
+    const id = setTimeout(() => dispatch(setSlide(nextSlide(activeSlide))), 1115000);
     return () => clearTimeout(id);
   }, [activeSlide]);
 

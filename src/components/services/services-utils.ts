@@ -44,7 +44,9 @@ export const setVisibleImage = (img: any, show: boolean): void => {
   if (show) {
     img.style.transitionDelay = '0.6s';
     img.style.transitionDuration = '0.4s';
-    img.classList.add('visible');
+    setTimeout(() => {
+      img.classList.add('visible');
+    }, 10);
   } else {
     img.style.transitionDelay = '0s';
     img.style.transitionDuration = '0.1s';

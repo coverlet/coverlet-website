@@ -96,9 +96,9 @@ export const Projects = (): ReactElement => {
           <div className="project-hero-text">NFT trading card game</div>
         </div> */}
         <div className="project">
-          Our team of skilled programmers has been involved in the development of diverse tools and
-          applications for the blockchain ecosystem. Our portfolio includes dapps, monitoring tools
-          and smart contract development.
+          Our team has been involved in the development of diverse tools and applications for the
+          blockchain ecosystem. Our portfolio includes dapps, monitoring tools and smart contract
+          development.
         </div>
         <div className="project">
           <div className="description">
@@ -107,39 +107,20 @@ export const Projects = (): ReactElement => {
               We are currently developing an immersive NFT trading card game that combines
               captivating artwork with strategic gameplay. Our game offers a unique, digital
               collectible experience, allowing players to acquire, trade, and battle with their NFT
-              cards. Dive into our engaging universe and join the thrilling adventure of collecting,
-              trading, and mastering your exclusive NFT trading card collection.
+              cards.
             </p>
+
             <p style={{ marginTop: '1rem' }}>
-              Don&apos;t miss out on the latest updates, early access, and exclusive NFT drops from
-              our exciting trading card game!{' '}
-            </p>
-            <div className="subscribe-container">
-              <input
-                type="text"
-                value={email}
-                placeholder="email"
-                className={`${!emailValid && 'invalid'}`}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setSubscribed(false);
-                }}
-              />
-              <button
-                onClick={() => {
-                  if (isValidEmail(email)) {
-                    subscribeEmail(email);
-                    setSubscribed(true);
-                    setEmail('');
-                  } else {
-                    setShouldValidate(true);
-                  }
-                }}
+              For the latest updates, early access and chance to earn exclusive NFT drops make sure
+              to{' '}
+              <a
+                href="https://twitter.com/intent/follow?&screen_name=coverlethq"
+                className="tweetlink"
               >
-                {subscribed && <>Subscribed &#10003;</>}
-                {!subscribed && <>Subscribe</>}
-              </button>
-            </div>
+                follow us on X
+              </a>
+              .
+            </p>
           </div>
           <div className="photo" ref={videoContainer}>
             {/* <img src="img/tcg.png" alt="Trading Card Game" /> */}

@@ -7,6 +7,20 @@
   align-items: center;
   // overflow: hidden;
 
+  .tweetlink {
+    display: inline-block;
+    background-color: #1d9bf0;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 2px 8px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #0e79bf;
+    }
+  }
+
   .video-track {
     margin-top: -56vh;
     // margin-top: 0;
