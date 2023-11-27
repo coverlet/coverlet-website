@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
         }}
       >
         <Layout>
+          {/* @ts-ignore */}
           <Component {...pageProps} />
         </Layout>
       </SmoothScrollProvider>
