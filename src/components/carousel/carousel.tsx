@@ -13,7 +13,7 @@ const slides = [
     type: 'network',
     img: 'content/solana-big.svg',
     bigTitle: 'Solana',
-    title: ['Earn SOL by delegating to our validator'],
+    title: ['Delegate and Accumulate SOL Rewards'],
     subtitle:
       'Stake with confidence knowing your tokens are in safe hands<br/>AMD EPYC 7443P 512GB RAM 2x4TB NVME',
     cta: 'STAKE SOLANA',
