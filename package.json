@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
+    "bignumber.js": "^9.1.2",
     "gsap": "npm:@gsap/shockingly@^3.6.1",
     "moment": "^2.29.1",
     "next": "10.0.0",
