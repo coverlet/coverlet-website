@@ -19,7 +19,6 @@ class NamadaExtension {
 
   public init() {
     this.extension = (window as any)?.namada;
-    console.log(this.extension);
   }
 
   public detect(): boolean {
@@ -28,7 +27,7 @@ class NamadaExtension {
   }
 
   public async connect(): Promise<void> {
-    await this.extension?.connect('shielded-expedition.88f17d1d14');
+    return this.extension?.connect('shielded-expedition.88f17d1d14');
   }
 
   public async disconnect(): Promise<void> {
@@ -89,7 +88,7 @@ const SendPage = (): ReactElement => {
   useEffect(() => {
     setTimeout(() => {
       console.log('connecting');
-      setConnected(namada.detect());
+      namada.init();
     }, 500);
   }, []);
   useEffect(() => {
@@ -120,7 +119,9 @@ const SendPage = (): ReactElement => {
             color="yellow"
             size="default"
             onClick={() => {
-              namada.connect();
+              namada.connect().then(() => {
+                setConnected(true);
+              });
             }}
           >
             CONNECT
@@ -159,7 +160,6 @@ const SendPage = (): ReactElement => {
             const res = namada.transfer(val, account);
             console.log(res);
             res.then((data) => {
-              console.log('XXxXXxXX');
               console.log(data);
             });
           }}
